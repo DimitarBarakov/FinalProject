@@ -1,0 +1,12 @@
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.ViewModels.deps.json
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.ViewModels.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.ViewModels.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.csproj.AssemblyReference.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.GeneratedMSBuildEditorConfig.editorconfig
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.AssemblyInfoInputs.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.AssemblyInfo.cs
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.csproj.CoreCompileInputs.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\refint\FootballApp.ViewModels.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\ref\FootballApp.ViewModels.dll

@@ -1,0 +1,12 @@
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Data.deps.json
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Data.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Data.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.csproj.AssemblyReference.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.GeneratedMSBuildEditorConfig.editorconfig
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.AssemblyInfoInputs.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.AssemblyInfo.cs
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.csproj.CoreCompileInputs.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\refint\FootballApp.Data.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\ref\FootballApp.Data.dll
