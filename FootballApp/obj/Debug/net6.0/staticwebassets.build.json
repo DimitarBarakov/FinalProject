@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "QJZjhczH92BadxSnImUnE+lDy1XoHjFqecbuoiHvySU=",
+  "Hash": "VnjDuXDesXefP+4Bt17itHyfPBI4OYXynITQBMNJiBI=",
   "Source": "FootballApp",
   "BasePath": "_content/FootballApp",
   "Mode": "Default",
@@ -1088,12 +1088,12 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\FootballApp\\wwwroot\\favicon.ico",
+      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\FootballApp\\wwwroot\\favicon.jpg",
       "SourceId": "FootballApp",
       "SourceType": "Discovered",
       "ContentRoot": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\FootballApp\\wwwroot\\",
       "BasePath": "_content/FootballApp",
-      "RelativePath": "favicon.ico",
+      "RelativePath": "favicon.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,7 +1102,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot\\favicon.jpg"
     },
     {
       "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\FootballApp\\wwwroot\\js\\site.js",

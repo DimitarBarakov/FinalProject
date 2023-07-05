@@ -14,5 +14,13 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.navbar {
+    background-color: #39870C;
+}
+
+footer{
+    background-color: green;
 }
