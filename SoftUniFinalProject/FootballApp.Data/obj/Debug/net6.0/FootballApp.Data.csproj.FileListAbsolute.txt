@@ -10,3 +10,10 @@ E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.D
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\refint\FootballApp.Data.dll
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.pdb
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\ref\FootballApp.Data.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Data.runtimeconfig.json
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Common.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Data.Models.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Data.Models.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\bin\Debug\net6.0\FootballApp.Common.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.csproj.CopyComplete
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Data\obj\Debug\net6.0\FootballApp.Data.genruntimeconfig.cache

@@ -545,14 +545,29 @@
           }
         }
       },
+      "FootballApp.Common/1.0.0": {
+        "runtime": {
+          "FootballApp.Common.dll": {}
+        }
+      },
       "FootballApp.Data/1.0.0": {
         "dependencies": {
+          "FootballApp.Data.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
           "Microsoft.EntityFrameworkCore": "6.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
         },
         "runtime": {
           "FootballApp.Data.dll": {}
+        }
+      },
+      "FootballApp.Data.Models/1.0.0": {
+        "dependencies": {
+          "FootballApp.Common": "1.0.0",
+          "Microsoft.Extensions.Identity.Stores": "6.0.15"
+        },
+        "runtime": {
+          "FootballApp.Data.Models.dll": {}
         }
       },
       "FootballApp.ViewModels/1.0.0": {
@@ -932,7 +947,17 @@
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
+    "FootballApp.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FootballApp.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FootballApp.Data.Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

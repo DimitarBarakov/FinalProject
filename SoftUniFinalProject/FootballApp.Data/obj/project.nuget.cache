@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gaIuz9mouPzRsnaSzFIwg8VPubH79kvy8KxOIi8DIVwtod9dfGh2QeQODmistMhEAt6OnehsLAnJdCMM4GeTWw==",
+  "dgSpecHash": "8p4qWfLoP8SxasORx0fyQjaMB8w76+fiN1adTIbgnJ3ZdP1TSgDEljHmkXgSMJBoa4K4+sxK30BdPqpC06VIFw==",
   "success": true,
   "projectFilePath": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Data\\FootballApp.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Mitko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.15\\microsoft.aspnetcore.cryptography.internal.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.15\\microsoft.aspnetcore.cryptography.keyderivation.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.15\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.15.nupkg.sha512",
@@ -13,8 +14,10 @@
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.15\\microsoft.entityframeworkcore.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.15\\microsoft.entityframeworkcore.abstractions.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.15\\microsoft.entityframeworkcore.analyzers.6.0.15.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.15\\microsoft.entityframeworkcore.design.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.15\\microsoft.entityframeworkcore.relational.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.15\\microsoft.entityframeworkcore.sqlserver.6.0.15.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.15\\microsoft.entityframeworkcore.tools.6.0.15.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

@@ -952,10 +952,21 @@
           }
         }
       },
+      "FootballApp.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/FootballApp.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballApp.Common.dll": {}
+        }
+      },
       "FootballApp.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "FootballApp.Data.Models": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.15",
           "Microsoft.EntityFrameworkCore": "6.0.15",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.15"
@@ -965,6 +976,20 @@
         },
         "runtime": {
           "bin/placeholder/FootballApp.Data.dll": {}
+        }
+      },
+      "FootballApp.Data.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FootballApp.Common": "1.0.0",
+          "Microsoft.Extensions.Identity.Stores": "6.0.15"
+        },
+        "compile": {
+          "bin/placeholder/FootballApp.Data.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballApp.Data.Models.dll": {}
         }
       },
       "FootballApp.ViewModels/1.0.0": {
@@ -2468,10 +2493,20 @@
         "version.txt"
       ]
     },
+    "FootballApp.Common/1.0.0": {
+      "type": "project",
+      "path": "../FootballApp.Common/FootballApp.Common.csproj",
+      "msbuildProject": "../FootballApp.Common/FootballApp.Common.csproj"
+    },
     "FootballApp.Data/1.0.0": {
       "type": "project",
       "path": "../FootballApp.Data/FootballApp.Data.csproj",
       "msbuildProject": "../FootballApp.Data/FootballApp.Data.csproj"
+    },
+    "FootballApp.Data.Models/1.0.0": {
+      "type": "project",
+      "path": "../FootballApp.Data.Models/FootballApp.Data.Models.csproj",
+      "msbuildProject": "../FootballApp.Data.Models/FootballApp.Data.Models.csproj"
     },
     "FootballApp.ViewModels/1.0.0": {
       "type": "project",

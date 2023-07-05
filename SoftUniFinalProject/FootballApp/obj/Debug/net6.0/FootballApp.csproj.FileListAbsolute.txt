@@ -79,3 +79,7 @@ E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\o
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\obj\Debug\net6.0\FootballApp.pdb
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\obj\Debug\net6.0\FootballApp.genruntimeconfig.cache
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\obj\Debug\net6.0\ref\FootballApp.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Common.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Data.Models.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Common.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Data.Models.pdb
