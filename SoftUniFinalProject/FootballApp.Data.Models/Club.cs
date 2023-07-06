@@ -7,17 +7,17 @@ namespace FootballApp.Data.Models
 {
     public class Club
     {
-        public Club()
-        {
-            this.Points = this.Wins * 3 + this.Draws;
-            this.GoalDifference = this.ScoredGoals - this.ConcededGoals;
-        }
+
         [Key]
         public int Id { get; set; }
 
         [Required]
         [MaxLength(NameMaxLength)]
         public string Name { get; set; } = null!;
+
+        [Required]
+        [MaxLength(LogoMaxLength)]
+        public string Logo { get; set; } = null!;
 
         [Required]
         [MaxLength(NicknameMaxLength)]
@@ -35,7 +35,7 @@ namespace FootballApp.Data.Models
         [Required]
         public int Loses { get; set; }
 
-        public int Points { get; }
+        public int Points => this.Wins * 3 + this.Draws;
 
         [Required]
         public int MatchesPlayed { get; set; }
@@ -46,7 +46,7 @@ namespace FootballApp.Data.Models
         [Required]
         public int ConcededGoals { get; set; }
 
-        public int GoalDifference { get;}
+        public int GoalDifference => this.ScoredGoals - this.ConcededGoals;
 
         [Required]
         [ForeignKey(nameof(League))]

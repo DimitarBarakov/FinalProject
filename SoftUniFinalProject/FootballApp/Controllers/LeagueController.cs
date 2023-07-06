@@ -20,5 +20,11 @@ namespace FootballApp.Controllers
 
             return View(model);
         }
+        public async Task<IActionResult> ShowById(int id)
+        {
+            var model = await leagueService.GetLeagueByIdAsync(id);
+
+            return View(model);
+        }
     }
 }

@@ -62,7 +62,7 @@
             public const int CityMaxLength = 20;
             public const int CityMinLength = 3;
 
-            public const int AddressMaxLength = 50;
+            public const int AddressMaxLength = 150;
             public const int AddressMinLength = 10;
         }
     }
