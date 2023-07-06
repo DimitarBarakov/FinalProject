@@ -83,3 +83,5 @@ E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\b
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Data.Models.dll
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Common.pdb
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Data.Models.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Services.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Services.pdb

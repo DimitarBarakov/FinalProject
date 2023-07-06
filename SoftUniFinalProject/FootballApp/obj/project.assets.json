@@ -992,6 +992,20 @@
           "bin/placeholder/FootballApp.Data.Models.dll": {}
         }
       },
+      "FootballApp.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FootballApp.Data": "1.0.0",
+          "FootballApp.ViewModels": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/FootballApp.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FootballApp.Services.dll": {}
+        }
+      },
       "FootballApp.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2508,6 +2522,11 @@
       "path": "../FootballApp.Data.Models/FootballApp.Data.Models.csproj",
       "msbuildProject": "../FootballApp.Data.Models/FootballApp.Data.Models.csproj"
     },
+    "FootballApp.Services/1.0.0": {
+      "type": "project",
+      "path": "../FootballApp.Services/FootballApp.Services.csproj",
+      "msbuildProject": "../FootballApp.Services/FootballApp.Services.csproj"
+    },
     "FootballApp.ViewModels/1.0.0": {
       "type": "project",
       "path": "../FootballApp.ViewModels/FootballApp.ViewModels.csproj",
@@ -2517,6 +2536,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "FootballApp.Data >= 1.0.0",
+      "FootballApp.Services >= 1.0.0",
       "FootballApp.ViewModels >= 1.0.0",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 6.0.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.15",
@@ -2560,6 +2580,9 @@
           "projectReferences": {
             "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Data\\FootballApp.Data.csproj": {
               "projectPath": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Data\\FootballApp.Data.csproj"
+            },
+            "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Services\\FootballApp.Services.csproj": {
+              "projectPath": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Services\\FootballApp.Services.csproj"
             },
             "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.ViewModels\\FootballApp.ViewModels.csproj": {
               "projectPath": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.ViewModels\\FootballApp.ViewModels.csproj"

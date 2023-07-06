@@ -17,7 +17,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FootballApp.Data\FootballApp.Data.csproj" />
+    <ProjectReference Include="..\FootballApp.Services\FootballApp.Services.csproj" />
     <ProjectReference Include="..\FootballApp.ViewModels\FootballApp.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\imgs\Leagues\" />
   </ItemGroup>
 
 </Project>

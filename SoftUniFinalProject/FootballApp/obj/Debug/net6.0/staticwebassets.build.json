@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xYMhUvvDRX4TmKiVxdk7TnhZeyNIC/Gz6psJFFBIzAs=",
+  "Hash": "rQ4G7O+WmCiw7wR3mzxc8F/tDo6zax704zzR5DMjyZk=",
   "Source": "FootballApp",
   "BasePath": "_content/FootballApp",
   "Mode": "Default",
@@ -1103,6 +1103,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Leagues\\La Liga.png",
+      "SourceId": "FootballApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\",
+      "BasePath": "_content/FootballApp",
+      "RelativePath": "imgs/Leagues/La Liga.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\Leagues\\La Liga.png"
+    },
+    {
+      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Leagues\\Premier League.png",
+      "SourceId": "FootballApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\",
+      "BasePath": "_content/FootballApp",
+      "RelativePath": "imgs/Leagues/Premier League.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\Leagues\\Premier League.png"
     },
     {
       "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\site.js",

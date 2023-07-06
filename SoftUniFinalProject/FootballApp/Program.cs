@@ -1,4 +1,6 @@
 using FootballApp.Data;
+using FootballApp.Services;
+using FootballApp.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,9 +18,13 @@ namespace FootballApp
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+            builder.Services.AddScoped<ILeagueService, LeagueService>();
+
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<FootballAppDbContext>();
             builder.Services.AddControllersWithViews();
+
+            
 
             var app = builder.Build();
 

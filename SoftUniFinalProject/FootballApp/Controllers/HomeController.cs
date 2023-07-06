@@ -1,4 +1,4 @@
-﻿using FootballApp.ViewModels;
+﻿using FootballApp.ViewModels.Home;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

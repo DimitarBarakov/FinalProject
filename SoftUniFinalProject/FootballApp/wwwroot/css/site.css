@@ -16,3 +16,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.league-logo {
+    width: 100px;
+    height: 100px;
+}
+.league-name{
+    font-size: 20px;
+}

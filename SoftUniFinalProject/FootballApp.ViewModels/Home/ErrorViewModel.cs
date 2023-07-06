@@ -1,4 +1,4 @@
-namespace FootballApp.ViewModels
+namespace FootballApp.ViewModels.Home
 {
     public class ErrorViewModel
     {
