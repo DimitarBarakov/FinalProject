@@ -308,7 +308,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Data.Models\\FootballApp.Data.Models.csproj": {
+                "projectPath": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.Data.Models\\FootballApp.Data.Models.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

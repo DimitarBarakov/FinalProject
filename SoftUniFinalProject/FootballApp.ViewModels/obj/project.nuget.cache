@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "EYtP4xqnoRUC3dHp7iWd8Ku5wMtnZJMXIBYJ/hE/HW/msDMDvJyFF9fT+fNOTCyg5kMzwY1IevAPECwe+NbAHQ==",
+  "dgSpecHash": "2OLdkskKuLCvamThxUm9/1mcTqk8S6bFbqJ+J9avrYdcEA/7F+3gFvGtslZb+6y4vufP0CPz5nTd2mQQmX4lYg==",
   "success": true,
   "projectFilePath": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp.ViewModels\\FootballApp.ViewModels.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.15\\microsoft.aspnetcore.cryptography.internal.6.0.15.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.15\\microsoft.aspnetcore.cryptography.keyderivation.6.0.15.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.15\\microsoft.extensions.identity.core.6.0.15.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.15\\microsoft.extensions.identity.stores.6.0.15.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mitko\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

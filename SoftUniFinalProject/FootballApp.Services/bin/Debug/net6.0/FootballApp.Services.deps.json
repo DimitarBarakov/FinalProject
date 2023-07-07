@@ -546,6 +546,9 @@
         }
       },
       "FootballApp.ViewModels/1.0.0": {
+        "dependencies": {
+          "FootballApp.Data.Models": "1.0.0"
+        },
         "runtime": {
           "FootballApp.ViewModels.dll": {}
         }

@@ -1,0 +1,35 @@
+﻿@model ClubPageViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="card flex-row league-card">
+    <img class="card-img-left example-card-img-responsive page-club-logo" style="margin:10px" src="~/imgs/Clubs/@(Model.Logo)" />
+    <div class="card-body">
+        <h2 class="card-title h5 h4-sm display-4">@Model.Name</h2>
+        <p class="card-text">Nickname: @Model.Nickname</p>
+        <p class="card-text"><a asp-controller="Stadium" asp-action="StadiumById" asp-route-id="@Model.Stadium.Id" class="link-dark" style="text-decoration:none">Stadium: @Model.Stadium.Name</a></p>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var player in Model.Players)
+        {
+            <tr class="align-items-center">
+                <td class="standing-td">@player.Number</td>
+                <td class="standing-td"><a asp-controller="Player" asp-action="PlayerById" asp-route-id="@player.Id" class="link-dark" style="text-decoration:none">@player.Name</a></td>
+                <td class="standing-td">@player.Position</td>
+            </tr>
+        }
+    </tbody>
+</table>

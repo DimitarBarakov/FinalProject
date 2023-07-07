@@ -863,6 +863,9 @@
       "FootballApp.ViewModels/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "FootballApp.Data.Models": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/FootballApp.ViewModels.dll": {}
         },

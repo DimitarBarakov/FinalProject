@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gv1LT7BMJ3NbiTn8DXl/4Fb1fqSWm+ERpVXAqnf1TDc=",
+  "Hash": "xSnLadqVmSgNbM37JqAdbIWH3+4gBoC9VDARdKBCNlA=",
   "Source": "FootballApp",
   "BasePath": "_content/FootballApp",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\Leagues\\Premier League.png"
+    },
+    {
+      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Bruno.png",
+      "SourceId": "FootballApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\",
+      "BasePath": "_content/FootballApp",
+      "RelativePath": "imgs/Players/Bruno.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\Players\\Bruno.png"
     },
     {
       "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\site.js",

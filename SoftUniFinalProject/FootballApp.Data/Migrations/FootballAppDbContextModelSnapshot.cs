@@ -178,6 +178,9 @@ namespace FootballApp.Data.Migrations
                     b.Property<int>("MatchesPlayed")
                         .HasColumnType("int");
 
+                    b.Property<int>("Number")
+                        .HasColumnType("int");
+
                     b.Property<string>("Picture")
                         .IsRequired()
                         .HasMaxLength(2048)

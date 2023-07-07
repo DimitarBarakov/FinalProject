@@ -10,3 +10,8 @@ E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.V
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\refint\FootballApp.ViewModels.dll
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.pdb
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\ref\FootballApp.ViewModels.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.Common.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.Data.Models.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.Data.Models.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\bin\Debug\net6.0\FootballApp.Common.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.ViewModels\obj\Debug\net6.0\FootballApp.ViewModels.csproj.CopyComplete

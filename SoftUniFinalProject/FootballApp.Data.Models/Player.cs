@@ -19,6 +19,9 @@ namespace FootballApp.Data.Models
         public string LastName { get; set; } = null!;
 
         [Required]
+        public int Number { get; set; }
+
+        [Required]
         public int Age { get; set; }
 
         [Required]

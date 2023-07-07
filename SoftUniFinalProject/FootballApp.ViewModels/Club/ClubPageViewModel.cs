@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FootballApp.Data.Models;
 
 namespace FootballApp.ViewModels.Club
 {
@@ -13,7 +9,7 @@ namespace FootballApp.ViewModels.Club
 
         public string? Nickname { get; set; }
 
-        public string Stadium { get; set; } = null!;
+        public Stadium Stadium { get; set; } = null!;
 
         public List<ClubPagePlayerViewModel> Players { get; set; } = new List<ClubPagePlayerViewModel>();
     }

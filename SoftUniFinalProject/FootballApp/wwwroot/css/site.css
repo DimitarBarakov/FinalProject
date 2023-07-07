@@ -34,3 +34,10 @@ body {
 .standing-td{
     vertical-align: middle;
 }
+.page-club-logo {
+    width: 170px;
+    height: 120px;
+}
+.card-body{
+    padding: 2px;
+}
