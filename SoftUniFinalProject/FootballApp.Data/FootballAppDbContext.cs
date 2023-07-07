@@ -23,6 +23,18 @@ namespace FootballApp.Data
             builder.Entity<UserClub>()
                 .HasKey(k => new {k.UserId, k.ClubId});
 
+            builder.Entity<Club>()
+                .HasMany(c => c.AwayFixtures)
+                .WithOne(f => f.AwayClub)
+                .HasForeignKey(f => f.AwayClubId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Club>()
+                .HasMany(c => c.HomeFixtures)
+                .WithOne(f => f.HomeClub)
+                .HasForeignKey(f => f.HomeClubId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(builder);
         }
     }

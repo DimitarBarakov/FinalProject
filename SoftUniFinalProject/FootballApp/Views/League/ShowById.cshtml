@@ -1,0 +1,45 @@
+﻿@model LeaguePageViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="card flex-row league-card">
+    <img class="card-img-left example-card-img-responsive league-logo" style="margin:10px" src="~/imgs/Leagues/@(Model.Logo)" />
+    <div class="card-body">
+        <h2 class="card-title h5 h4-sm display-4">@Model.Name</h2>
+        <p class="card-text">@Model.Country</p>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Logo</th>
+            <th scope="col">Team</th>
+            <th scope="col">MP</th>
+            <th scope="col">W</th>
+            <th scope="col">D</th>
+            <th scope="col">L</th>
+            <th scope="col">GD</th>
+            <th scope="col">Pts</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.Clubs.Count; i++)
+        {
+            <tr class ="align-items-center">
+                <th class="standing-td" scope="row">@(i + 1)</th>
+                <td class="standing-td"><img src="~/imgs/Clubs/Manchester United.png" class="standings-club-logo"></td>
+                <td class="standing-td"><a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.Clubs[i].Id" class="link-dark" style="text-decoration:none">@Model.Clubs[i].Name</a></td>
+                <td class="standing-td">@Model.Clubs[i].MathesPlayed</td>
+                <td class="standing-td">@Model.Clubs[i].Wins</td>
+                <td class="standing-td">@Model.Clubs[i].Draws</td>
+                <td class="standing-td">@Model.Clubs[i].Loses</td>
+                <td class="standing-td">@Model.Clubs[i].GoalDifferrence</td>
+                <td class="standing-td">@Model.Clubs[i].Points</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -5,10 +5,6 @@ namespace FootballApp.Data.Models
 {
     public class Fixture
     {
-        public Fixture()
-        {
-            this.Stadium = this.HomeClub.Stadium;
-        }
 
         [Key]
         public int Id { get; set; }
@@ -17,7 +13,7 @@ namespace FootballApp.Data.Models
         public DateTime StartTime { get; set; }
 
         [Required]
-        public virtual Stadium Stadium{ get; set; }
+        public virtual Stadium Stadium => this.HomeClub.Stadium;
 
         [Required]
         [ForeignKey(nameof(HomeClub))]

@@ -62,5 +62,8 @@ namespace FootballApp.Data.Models
         public int StadiumId { get; set; }
 
         public virtual Stadium Stadium { get; set; } = null!;
+
+        public virtual List<Fixture> HomeFixtures  { get; set; } = new List<Fixture>();
+        public virtual List<Fixture> AwayFixtures { get; set; } = new List<Fixture>();
     }
 }

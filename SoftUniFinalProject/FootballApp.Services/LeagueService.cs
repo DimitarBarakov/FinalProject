@@ -37,6 +37,7 @@ namespace FootballApp.Services
             var model = new LeaguePageViewModel()
             {
                 Name = league.Name,
+                Country = league.Country,
                 Logo = league.Logo,
                 Clubs = league.Clubs
                 .Select(c => new LeagueClubViewModel()

@@ -20,6 +20,7 @@ namespace FootballApp.Controllers
 
             return View(model);
         }
+        [Route("LeaguePage")]
         public async Task<IActionResult> ShowById(int id)
         {
             var model = await leagueService.GetLeagueByIdAsync(id);
