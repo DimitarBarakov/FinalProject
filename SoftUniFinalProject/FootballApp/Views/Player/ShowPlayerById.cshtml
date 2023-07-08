@@ -1,0 +1,44 @@
+﻿@model PlayerPageViewModel
+
+@{
+    ViewBag.Title = Model.Name;
+}
+<div class="container row">
+    <div class="card flex-row league-card col-lg-6">
+        <img class="card-img-left example-card-img-responsive page-club-logo" style="margin:10px" src="~/imgs/Players/@(Model.Picture)" />
+        <div class="card-body">
+            <h2 class="card-title h5 h4-sm display-4">@Model.Name</h2>
+            <p class="card-text">Country: @Model.Country</p>
+            <p class="card-text">Age: @Model.Age</p>
+            <p class="card-text">Position: @Model.Position</p>
+        </div>
+    </div>
+    <div class="card flex-row league-card col-lg-6">
+        <img class="card-img-left example-card-img-responsive page-club-logo" style="margin:10px" src="~/imgs/Clubs/@(Model.Club.Logo)" />
+        <div class="card-body">
+            <h2 class="card-title h5 h4-sm display-4">@Model.Club.Name</h2>
+            <p class="card-text">Matches Played: @Model.MatchesPlayed</p>
+            <p class="card-text">Goals: @Model.Goals</p>
+            <p class="card-text">Assissts: @Model.Assists</p>
+        </div>
+    </div>
+</div>
+@*<div class="card flex-row league-card">
+    <img class="card-img-left example-card-img-responsive page-club-logo" style="margin:10px" src="~/imgs/Players/@(Model.Picture)" />
+    <div class="card-body">
+        <h2 class="card-title h5 h4-sm display-4">Name: @Model.Name</h2>
+        <p class="card-text">Country: @Model.Country</p>
+        <p class="card-text">Age: @Model.Age</p>
+        <p class="card-text">Position: @Model.Position</p>
+    </div>
+</div>
+
+<div class="card flex-row league-card">
+    <img class="card-img-left example-card-img-responsive page-club-logo" style="margin:10px" src="~/imgs/Clubs/@(Model.Club.Logo)" />
+    <div class="card-body">
+        <h2 class="card-title h5 h4-sm display-4">Name: @Model.Club.Name</h2>
+        <p class="card-text">Matches Played: @Model.MatchesPlayed</p>
+        <p class="card-text">Goals: @Model.Goals</p>
+        <p class="card-text">Assissts: @Model.Assists</p>
+    </div>
+</div>*@
