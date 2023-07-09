@@ -15,24 +15,37 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Logo</th>
+            <th scope="col" class="standing-td">#</th>
+            <th scope="col" class="standing-td">Logo</th>
             <th scope="col">Team</th>
-            <th scope="col">MP</th>
-            <th scope="col">W</th>
-            <th scope="col">D</th>
-            <th scope="col">L</th>
-            <th scope="col">GD</th>
-            <th scope="col">Pts</th>
+            <th scope="col" class="standing-td">MP</th>
+            <th scope="col" class="standing-td">W</th>
+            <th scope="col" class="standing-td">D</th>
+            <th scope="col" class="standing-td">L</th>
+            <th scope="col" class="standing-td">GD</th>
+            <th scope="col" class="standing-td">Pts</th>
         </tr>
     </thead>
     <tbody>
         @for (int i = 0; i < Model.Clubs.Count; i++)
         {
             <tr class ="align-items-center">
-                <th class="standing-td" scope="row">@(i + 1)</th>
-                <td class="standing-td"><img src="~/imgs/Clubs/Manchester United.png" class="standings-club-logo"></td>
-                <td class="standing-td"><a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.Clubs[i].Id" class="link-dark" style="text-decoration:none">@Model.Clubs[i].Name</a></td>
+                @if (i == 0)
+                {
+                    <th class="standing-td" scope="row" style="background-color:gold; text-align:center">@(i + 1)</th>
+                }
+                @{
+                    else if (i>=8)
+                    {
+                        <th class="standing-td" scope="row" style="background-color:red; text-align:center">@(i + 1)</th>
+                    }
+                    else
+                    {
+                        <th class="standing-td" scope="row" style="text-align:center">@(i + 1)</th>
+                    }
+                }
+                <td class="standing-td" style="width:20px"><img src="~/imgs/Clubs/@(Model.Clubs[i].Logo)" class="standings-club-logo"></td>
+                <td><a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.Clubs[i].Id" class="link-dark" style="text-decoration:none">@Model.Clubs[i].Name</a></td>
                 <td class="standing-td">@Model.Clubs[i].MathesPlayed</td>
                 <td class="standing-td">@Model.Clubs[i].Wins</td>
                 <td class="standing-td">@Model.Clubs[i].Draws</td>

@@ -1,0 +1,20 @@
+﻿@model List<AllFixturesViewModel>
+
+
+@foreach(var fixture in Model)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">@fixture.HomeClub.Name</div>
+            <div class="col-md-4">@fixture.StartTime</div>
+            <div class="col-md-4">@fixture.AwayClub.Name</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/imgs/Clubs/@(fixture.HomeClub.Logo)">
+            </div>
+            <div class="col-md-4">-</div>
+            <div class="col-md-4"><img src="~/imgs/Clubs/@(fixture.AwayClub.Logo)"></div>
+        </div>
+    </div>
+}

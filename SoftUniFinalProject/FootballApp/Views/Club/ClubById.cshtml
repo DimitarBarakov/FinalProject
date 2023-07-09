@@ -26,9 +26,9 @@
         @foreach(var player in Model.Players)
         {
             <tr class="align-items-center">
-                <td class="standing-td">@player.Number</td>
-                <td class="standing-td"><a asp-controller="Player" asp-action="ShowPlayerById" asp-route-id="@player.Id" class="link-dark" style="text-decoration:none">@player.Name</a></td>
-                <td class="standing-td">@player.Position</td>
+                <td>@player.Number</td>
+                <td><a asp-controller="Player" asp-action="ShowPlayerById" asp-route-id="@player.Id" class="link-dark" style="text-decoration:none">@player.Name</a></td>
+                <td>@player.Position</td>
             </tr>
         }
     </tbody>

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Clubs\\Arsenal.png",
+      "PackagePath": "staticwebassets\\imgs\\Clubs\\Arsenal.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Clubs\\Manchester United.png",
       "PackagePath": "staticwebassets\\imgs\\Clubs\\Manchester United.png"
     },
