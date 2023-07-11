@@ -42,3 +42,6 @@ body {
 .card-body{
     padding: 2px;
 }
+.aligner {
+    text-align: center;
+}
