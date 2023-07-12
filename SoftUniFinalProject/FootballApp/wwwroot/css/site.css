@@ -45,3 +45,10 @@ body {
 .aligner {
     text-align: center;
 }
+.add-favorite{
+    float:right;
+    text-decoration: none;
+}
+.add-favorite:hover {
+     cursor: pointer;
+}

@@ -7,7 +7,15 @@
 <div class="card flex-row league-card">
     <img class="card-img-left example-card-img-responsive page-club-logo" style="margin:10px" src="~/imgs/Clubs/@(Model.Logo)" />
     <div class="card-body">
-        <h2 class="card-title h5 h4-sm display-4">@Model.Name</h2>
+        <h2 class="card-title h5 h4-sm display-4">
+            @Model.Name
+            @{
+                if (User.Identity?.IsAuthenticated ?? false)
+                {
+                    <a data-bs-toggle="popover" title="Add to favorites" data-bs-trigger="hover" data-bs-placement="bottom" class="add-favorite" style="color:red;">&#10084;</a>
+                }
+            }
+        </h2>
         <p class="card-text">Nickname: @Model.Nickname</p>
         <p class="card-text"><a asp-controller="Stadium" asp-action="StadiumById" asp-route-id="@Model.Stadium.Id" class="link-dark" style="text-decoration:none">Stadium: @Model.Stadium.Name</a></p>
     </div>
@@ -23,7 +31,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var player in Model.Players)
+        @foreach (var player in Model.Players)
         {
             <tr class="align-items-center">
                 <td>@player.Number</td>
@@ -32,4 +40,11 @@
             </tr>
         }
     </tbody>
+
 </table>
+
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+    var popoverList = popoverTriggerList.map(function (popoverTigger) { return new bootstrap.Popover(popoverTigger); });
+</script>
