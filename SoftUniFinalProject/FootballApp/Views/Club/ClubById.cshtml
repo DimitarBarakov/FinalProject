@@ -12,7 +12,7 @@
             @{
                 if (User.Identity?.IsAuthenticated ?? false)
                 {
-                    <a data-bs-toggle="popover" title="Add to favorites" data-bs-trigger="hover" data-bs-placement="bottom" class="add-favorite" style="color:red;">&#10084;</a>
+                    <a asp-controller="Club" asp-action="AddToFavorites" asp-route-id="@Model.Id" data-bs-toggle="popover" title="Add to favorites" data-bs-trigger="hover" data-bs-placement="bottom" class="add-favorite" style="color:red;">&#10084;</a>
                 }
             }
         </h2>

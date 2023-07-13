@@ -4,6 +4,8 @@ namespace FootballApp.Services.Interfaces
 {
     public interface IClubService
     {
-        public Task<ClubPageViewModel?> GetClubById(int clubId);
+        public Task<ClubPageViewModel?> GetClubByIdAsync(int clubId);
+
+        public Task AddToFavoritesAsync(int clubId, string userId);
     }
 }

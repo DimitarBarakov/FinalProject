@@ -5,6 +5,7 @@ namespace FootballApp.ViewModels.Club
 {
     public class ClubPageViewModel
     {
+        public int Id { get; set; }
         public string Logo { get; set; } = null!;
         public string Name { get; set; } = null!;
 

@@ -1,5 +1,6 @@
 ﻿using FootballApp.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace FootballApp.Controllers
 {
@@ -13,9 +14,17 @@ namespace FootballApp.Controllers
         }
         public async Task<IActionResult> ClubById(int id)
         {
-            var model = await clubService.GetClubById(id);
+            var model = await clubService.GetClubByIdAsync(id);
 
             return View(model);
+        }
+        public async Task<IActionResult> AddToFavorites(int id)
+        {
+            //TODO: Validate the club and user id, validate if the team is already added
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            await clubService.AddToFavoritesAsync(id, userId);
+            return RedirectToAction("ShowFavorites");
         }
     }
 }

@@ -4,6 +4,7 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace FootballApp.Services
 {
@@ -15,7 +16,7 @@ namespace FootballApp.Services
         {
             dbContext = context;
         }
-        public async Task<ClubPageViewModel?> GetClubById(int clubId)
+        public async Task<ClubPageViewModel?> GetClubByIdAsync(int clubId)
         {
             Club? club = await dbContext.Clubs
                 .Include(c=>c.HomeFixtures)
@@ -48,6 +49,7 @@ namespace FootballApp.Services
 
             ClubPageViewModel model = new ClubPageViewModel()
             {
+                Id = club.Id,
                 Logo = club.Logo,
                 Name = club.Name,
                 Nickname = club.Nickname,
@@ -83,6 +85,19 @@ namespace FootballApp.Services
             };
 
             return model;
+        }
+
+        public async Task AddToFavoritesAsync(int clubId, string userId)
+        {
+            var club = await dbContext.Clubs.FindAsync(clubId);
+            UserClub userClub = new UserClub()
+            {
+                ClubId = club.Id,
+                UserId = userId
+            };
+
+            await dbContext.FavoriteClubs.AddAsync(userClub);
+            dbContext.SaveChanges();
         }
     }
 }
