@@ -1,4 +1,5 @@
 ﻿using FootballApp.Data.Models;
+using FootballApp.ViewModels.Fixture;
 
 namespace FootballApp.ViewModels.Club
 {
@@ -12,5 +13,6 @@ namespace FootballApp.ViewModels.Club
         public Stadium Stadium { get; set; } = null!;
 
         public List<ClubPagePlayerViewModel> Players { get; set; } = new List<ClubPagePlayerViewModel>();
+        public List<AllFixturesViewModel> Fixtures { get; set; } = new List<AllFixturesViewModel>();
     }
 }

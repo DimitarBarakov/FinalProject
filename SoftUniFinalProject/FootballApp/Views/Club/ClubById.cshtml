@@ -20,34 +20,64 @@
         <p class="card-text"><a asp-controller="Stadium" asp-action="StadiumById" asp-route-id="@Model.Stadium.Id" class="link-dark" style="text-decoration:none">Stadium: @Model.Stadium.Name</a></p>
     </div>
 </div>
+<nav class="navbar navbar-expand-sm">
 
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Position</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var player in Model.Players)
-        {
-            <tr class="align-items-center">
-                <td>@player.Number</td>
-                <td><a asp-controller="Player" asp-action="ShowPlayerById" asp-route-id="@player.Id" class="link-dark" style="text-decoration:none">@player.Name</a></td>
-                <td>@player.Position</td>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a id="showPlayers" class="nav-link link-dark" href="#">Players</a>
+        </li>
+        <li class="nav-item">
+            <a id="showFixtures" class="nav-link link-dark" href="#">Fixtures</a>
+        </li>
+    </ul>
+</nav>
+<div id="clubPlayers">
+    <table  class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
             </tr>
-        }
-    </tbody>
-
-</table>
+        </thead>
+        <tbody>
+            @foreach (var player in Model.Players)
+            {
+                <tr class="align-items-center">
+                    <td>@player.Number</td>
+                    <td><a asp-controller="Player" asp-action="ShowPlayerById" asp-route-id="@player.Id" class="link-dark" style="text-decoration:none">@player.Name</a></td>
+                    <td>@player.Position</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<div id="clubFixtures" style="display:none">
+    @foreach (var fixture in Model.Fixtures)
+    {
+        <div class="container card">
+            <div class="row">
+                <div class="col-md-4 aligner">@fixture.HomeClub.Name</div>
+                <div class="col-md-4 aligner">@fixture.StartTime</div>
+                <div class="col-md-4 aligner">@fixture.AwayClub.Name</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 aligner">
+                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.HomeClub.Logo)">
+                </div>
+                <div class="col-md-4 aligner">-</div>
+                <div class="col-md-4 aligner">
+                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.AwayClub.Logo)">
+                </div>
+            </div>
+        </div>
+    }
+</div>
 
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    var popoverList = popoverTriggerList.map(function (popoverTigger)
-    { 
-        return new bootstrap.Popover(popoverTigger); 
+    var popoverList = popoverTriggerList.map(function (popoverTigger) {
+        return new bootstrap.Popover(popoverTigger);
     });
 </script>

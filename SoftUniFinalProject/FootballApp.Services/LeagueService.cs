@@ -52,6 +52,7 @@ namespace FootballApp.Services
                     Loses = c.Loses,
                     MathesPlayed = c.MatchesPlayed
                 })
+                .OrderByDescending(c=>c.Points)
                 .ToList()
             };
             return model;

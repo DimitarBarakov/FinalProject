@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6ZBp0IVKBh8ZXRPgnh0nT35GztsavFkgVZsj49kWIf0=",
+  "Hash": "c6/IUS4fWtVcSt7OyuesEYaYcGeZJaZNzPNB110NE2U=",
   "Source": "FootballApp",
   "BasePath": "_content/FootballApp",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\Clubs\\Arsenal.png"
+    },
+    {
+      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Clubs\\Chelsea.png",
+      "SourceId": "FootballApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\",
+      "BasePath": "_content/FootballApp",
+      "RelativePath": "imgs/Clubs/Chelsea.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\Clubs\\Chelsea.png"
     },
     {
       "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Clubs\\Manchester United.png",
