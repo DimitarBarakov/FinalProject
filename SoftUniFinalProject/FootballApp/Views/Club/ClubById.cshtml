@@ -46,5 +46,8 @@
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
-    var popoverList = popoverTriggerList.map(function (popoverTigger) { return new bootstrap.Popover(popoverTigger); });
+    var popoverList = popoverTriggerList.map(function (popoverTigger)
+    { 
+        return new bootstrap.Popover(popoverTigger); 
+    });
 </script>

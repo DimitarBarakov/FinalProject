@@ -25,6 +25,15 @@ namespace FootballApp
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<FootballAppDbContext>();
+
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+            });
+
             builder.Services.AddControllersWithViews();
 
             
