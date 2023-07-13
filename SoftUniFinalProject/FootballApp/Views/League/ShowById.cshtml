@@ -11,48 +11,84 @@
         <p class="card-text">@Model.Country</p>
     </div>
 </div>
+<nav class="navbar navbar-expand-sm">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col" class="standing-td">#</th>
-            <th scope="col" class="standing-td">Logo</th>
-            <th scope="col">Team</th>
-            <th scope="col" class="standing-td">MP</th>
-            <th scope="col" class="standing-td">W</th>
-            <th scope="col" class="standing-td">D</th>
-            <th scope="col" class="standing-td">L</th>
-            <th scope="col" class="standing-td">GD</th>
-            <th scope="col" class="standing-td">Pts</th>
-        </tr>
-    </thead>
-    <tbody>
-        @for (int i = 0; i < Model.Clubs.Count; i++)
-        {
-            <tr class ="align-items-center">
-                @if (i == 0)
-                {
-                    <th class="standing-td" scope="row" style="background-color:gold; text-align:center">@(i + 1)</th>
-                }
-                @{
-                    else if (i>=8)
-                    {
-                        <th class="standing-td" scope="row" style="background-color:red; text-align:center">@(i + 1)</th>
-                    }
-                    else
-                    {
-                        <th class="standing-td" scope="row" style="text-align:center">@(i + 1)</th>
-                    }
-                }
-                <td class="standing-td" style="width:20px"><img src="~/imgs/Clubs/@(Model.Clubs[i].Logo)" class="standings-club-logo"></td>
-                <td><a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.Clubs[i].Id" class="link-dark" style="text-decoration:none">@Model.Clubs[i].Name</a></td>
-                <td class="standing-td">@Model.Clubs[i].MathesPlayed</td>
-                <td class="standing-td">@Model.Clubs[i].Wins</td>
-                <td class="standing-td">@Model.Clubs[i].Draws</td>
-                <td class="standing-td">@Model.Clubs[i].Loses</td>
-                <td class="standing-td">@Model.Clubs[i].GoalDifferrence</td>
-                <td class="standing-td">@Model.Clubs[i].Points</td>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a id="showStandings" class="nav-link link-dark" href="#">Standings</a>
+        </li>
+        <li class="nav-item">
+            <a id="showLeagueFixtures" class="nav-link link-dark" href="#">Fixtures</a>
+        </li>
+    </ul>
+</nav>
+
+<div id="standingsTable">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="standing-td">#</th>
+                <th scope="col" class="standing-td">Logo</th>
+                <th scope="col">Team</th>
+                <th scope="col" class="standing-td">MP</th>
+                <th scope="col" class="standing-td">W</th>
+                <th scope="col" class="standing-td">D</th>
+                <th scope="col" class="standing-td">L</th>
+                <th scope="col" class="standing-td">GD</th>
+                <th scope="col" class="standing-td">Pts</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Clubs.Count; i++)
+            {
+                <tr class="align-items-center">
+                    @if (i == 0)
+                    {
+                        <th class="standing-td" scope="row" style="background-color:gold; text-align:center">@(i + 1)</th>
+                    }
+                    @{
+                        else if (i >= 8)
+                        {
+                            <th class="standing-td" scope="row" style="background-color:red; text-align:center">@(i + 1)</th>
+                        }
+                        else
+                        {
+                            <th class="standing-td" scope="row" style="text-align:center">@(i + 1)</th>
+                        }
+                    }
+                    <td class="standing-td" style="width:20px"><img src="~/imgs/Clubs/@(Model.Clubs[i].Logo)" class="standings-club-logo"></td>
+                    <td><a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.Clubs[i].Id" class="link-dark" style="text-decoration:none">@Model.Clubs[i].Name</a></td>
+                    <td class="standing-td">@Model.Clubs[i].MathesPlayed</td>
+                    <td class="standing-td">@Model.Clubs[i].Wins</td>
+                    <td class="standing-td">@Model.Clubs[i].Draws</td>
+                    <td class="standing-td">@Model.Clubs[i].Loses</td>
+                    <td class="standing-td">@Model.Clubs[i].GoalDifferrence</td>
+                    <td class="standing-td">@Model.Clubs[i].Points</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div id="fixturesTable" style="display:none">
+    @foreach (var fixture in Model.Fixtures)
+    {
+        <div class="container card">
+            <div class="row">
+                <div class="col-md-4 aligner">@fixture.HomeClub.Name</div>
+                <div class="col-md-4 aligner">@fixture.StartTime</div>
+                <div class="col-md-4 aligner">@fixture.AwayClub.Name</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 aligner">
+                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.HomeClub.Logo)">
+                </div>
+                <div class="col-md-4 aligner">-</div>
+                <div class="col-md-4 aligner">
+                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.AwayClub.Logo)">
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<script src="~/js/LeagueByIdJS.js"></script>

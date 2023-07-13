@@ -37,6 +37,14 @@
       "PackagePath": "staticwebassets\\imgs\\Players\\Bruno.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\ClubByIdJS.js",
+      "PackagePath": "staticwebassets\\js\\ClubByIdJS.js"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\LeagueByIdJS.js",
+      "PackagePath": "staticwebassets\\js\\LeagueByIdJS.js"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

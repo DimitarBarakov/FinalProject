@@ -1,4 +1,6 @@
-﻿namespace FootballApp.ViewModels.League
+﻿using FootballApp.ViewModels.Fixture;
+
+namespace FootballApp.ViewModels.League
 {
     public class LeaguePageViewModel
     {
@@ -9,5 +11,7 @@
         public string Country { get; set; } = null!;
 
         public List<LeagueClubViewModel> Clubs { get; set; } = new List<LeagueClubViewModel>();
+
+        public List<AllFixturesViewModel> Fixtures { get; set; } = new List<AllFixturesViewModel>();
     }
 }
