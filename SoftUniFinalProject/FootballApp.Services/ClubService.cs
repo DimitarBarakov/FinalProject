@@ -89,15 +89,22 @@ namespace FootballApp.Services
 
         public async Task AddToFavoritesAsync(int clubId, string userId)
         {
-            var club = await dbContext.Clubs.FindAsync(clubId);
+            Club? club = await dbContext.Clubs.FindAsync(clubId);
             UserClub userClub = new UserClub()
             {
-                ClubId = club.Id,
+                ClubId = club!.Id,
                 UserId = userId
             };
 
             await dbContext.FavoriteClubs.AddAsync(userClub);
             dbContext.SaveChanges();
+        }
+
+        public async Task<bool> DoesHouseExistsByIdAsync(int clubId)
+        {
+            bool result = await dbContext.Clubs.AnyAsync(c => c.Id == clubId);
+
+            return result;
         }
     }
 }

@@ -53,25 +53,7 @@
     </table>
 </div>
 <div id="clubFixtures" style="display:none">
-    @foreach (var fixture in Model.Fixtures)
-    {
-        <div class="container card">
-            <div class="row">
-                <div class="col-md-4 aligner">@fixture.HomeClub.Name</div>
-                <div class="col-md-4 aligner">@fixture.StartTime</div>
-                <div class="col-md-4 aligner">@fixture.AwayClub.Name</div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 aligner">
-                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.HomeClub.Logo)">
-                </div>
-                <div class="col-md-4 aligner">-</div>
-                <div class="col-md-4 aligner">
-                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.AwayClub.Logo)">
-                </div>
-            </div>
-        </div>
-    }
+    <partial name="_FixturesPartialView" model="@Model.Fixtures" />
 </div>
 
 <script src="~/js/ClubByIdJS.js"></script>

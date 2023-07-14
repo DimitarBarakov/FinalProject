@@ -23,6 +23,15 @@ namespace FootballApp.Controllers
         [Route("LeaguePage")]
         public async Task<IActionResult> ShowById(int id)
         {
+            bool doesLeagueExists = await leagueService.DoesLeagueExistsByIdAsync(id);
+
+
+            //TODO: Add error page
+            if (!doesLeagueExists)
+            {
+                return BadRequest();
+            }
+
             var model = await leagueService.GetLeagueByIdAsync(id);
 
             return View(model);

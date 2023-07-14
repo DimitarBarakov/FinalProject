@@ -14,6 +14,15 @@ namespace FootballApp.Controllers
         }
         public async Task<IActionResult> ShowPlayerById(int id)
         {
+            bool doesPlayerExists = await playerService.DoesPlayerExistsByIdAsync(id);
+
+
+            //TODO: Add custom error page
+            if (!doesPlayerExists)
+            {
+                return BadRequest();
+            }
+
             PlayerPageViewModel? model = await playerService.GetPlayerByIdAsync(id);
 
             return View(model);

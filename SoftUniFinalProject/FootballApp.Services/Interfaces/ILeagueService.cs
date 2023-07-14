@@ -7,5 +7,7 @@ namespace FootballApp.Services.Interfaces
         public Task<List<AllLeaguesViewModel>> GetAllLeaguesAsync();
 
         public Task<LeaguePageViewModel> GetLeagueByIdAsync(int leagueId);
+
+        public Task<bool> DoesLeagueExistsByIdAsync(int leagueId);
     }
 }

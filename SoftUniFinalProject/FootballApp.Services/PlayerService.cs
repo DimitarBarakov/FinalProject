@@ -22,7 +22,7 @@ namespace FootballApp.Services
 
             PlayerPageViewModel? model = new PlayerPageViewModel()
             {
-                Picture = player.Picture,
+                Picture = player!.Picture,
                 Name = $"{player.FirstName} {player.LastName}",
                 MatchesPlayed = player.MatchesPlayed,
                 Goals = player.Goals,
@@ -38,6 +38,12 @@ namespace FootballApp.Services
             };
 
             return model;
+        }
+        public async Task<bool> DoesPlayerExistsByIdAsync(int playerId)
+        {
+            bool doesPlayerExists = await dbContext.Players.AnyAsync(p => p.Id == playerId);
+
+            return doesPlayerExists;
         }
     }
 }

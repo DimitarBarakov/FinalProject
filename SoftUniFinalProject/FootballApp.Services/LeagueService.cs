@@ -15,6 +15,14 @@ namespace FootballApp.Services
         {
             this.dbContext = context;
         }
+
+        public async Task<bool> DoesLeagueExistsByIdAsync(int leagueId)
+        {
+            bool res = await dbContext.Leagues.AnyAsync(l => l.Id == leagueId);
+
+            return res;
+        }
+
         public async Task<List<AllLeaguesViewModel>> GetAllLeaguesAsync()
         {
             List<AllLeaguesViewModel> leagues = await dbContext.Leagues
@@ -77,5 +85,7 @@ namespace FootballApp.Services
             };
             return model;
         }
+
+
     }
 }

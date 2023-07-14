@@ -14,6 +14,11 @@ namespace FootballApp.Controllers
         }
         public async Task<IActionResult> ClubById(int id)
         {
+            bool doesClubExists = await clubService.DoesHouseExistsByIdAsync(id);
+            if (!doesClubExists)
+            {
+                return BadRequest();
+            }
             var model = await clubService.GetClubByIdAsync(id);
 
             return View(model);
