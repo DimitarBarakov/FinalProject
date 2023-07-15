@@ -52,3 +52,7 @@ body {
 .add-favorite:hover {
      cursor: pointer;
 }
+#heart{
+    background-color:transparent;
+    border:none;
+}
