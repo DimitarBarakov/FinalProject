@@ -27,7 +27,7 @@ namespace FootballApp.Services
                 .Include(c=>c.Stadium)
                 .FirstOrDefaultAsync(c=>c.Id == clubId);
 
-            List<AllFixturesViewModel> awayFixtures = club.AwayFixtures
+            List<AllFixturesViewModel> awayFixtures = club!.AwayFixtures
                 .Select(f => new AllFixturesViewModel()
                 {
                     Id = f.Id,
@@ -100,7 +100,7 @@ namespace FootballApp.Services
             dbContext.SaveChanges();
         }
 
-        public async Task<bool> DoesHouseExistsByIdAsync(int clubId)
+        public async Task<bool> DoesClubExistsByIdAsync(int clubId)
         {
             bool result = await dbContext.Clubs.AnyAsync(c => c.Id == clubId);
 

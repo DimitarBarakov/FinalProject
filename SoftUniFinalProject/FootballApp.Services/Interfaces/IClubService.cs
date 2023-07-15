@@ -8,6 +8,6 @@ namespace FootballApp.Services.Interfaces
 
         public Task AddToFavoritesAsync(int clubId, string userId);
 
-        public Task<bool> DoesHouseExistsByIdAsync(int houseId);
+        public Task<bool> DoesClubExistsByIdAsync(int houseId);
     }
 }
