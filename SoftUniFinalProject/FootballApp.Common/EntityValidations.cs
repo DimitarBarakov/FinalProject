@@ -26,9 +26,13 @@
             public const int WinsMinCount = 0;
             public const int DrawsMinCount = 0;
             public const int LosesMinCount = 0;
+            public const int MatchesPlayedMinCount = 0;
 
-            public const int MinYear = 0;
-            public static int MaxYear = DateTime.UtcNow.Year;
+            public const int ScoredGoalMinCount = 0;
+            public const int ConcededGoalsMinCount = 0;
+
+            public const int MinYear = 1800;
+            public const int MaxYear = 2023;
         }
         public static class PlayerValidations
         {

@@ -56,3 +56,7 @@ body {
     background-color:transparent;
     border:none;
 }
+.button-add {
+    margin-left: -12px;
+    margin-top: 10px;
+}

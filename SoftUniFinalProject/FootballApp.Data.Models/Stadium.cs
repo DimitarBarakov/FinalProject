@@ -25,9 +25,6 @@ namespace FootballApp.Data.Models
         [MaxLength(AddressMaxLength)]
         public string Address { get; set; } = null!;
 
-        [ForeignKey(nameof(Club))]
-        public int? ClubId { get; set; }
-
-        public virtual Club? Club { get; set; }
+        public virtual List<Club> Clubs { get; set; } = new List<Club>();
     }
 }

@@ -17,6 +17,13 @@ namespace FootballApp.Controllers
             this.clubService = service;
             userClubService = ucservice;
         }
+        //TODO: Only for admins
+        public IActionResult AddClub()
+        {
+            var model = new AddClubViewModel();
+
+            return View(model);
+        }
         public async Task<IActionResult> ClubById(int id)
         {
             bool doesClubExists = await clubService.DoesClubExistsByIdAsync(id);

@@ -17,7 +17,7 @@ namespace FootballApp.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.15")
+                .HasAnnotation("ProductVersion", "6.0.20")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -216,9 +216,6 @@ namespace FootballApp.Data.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int?>("ClubId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Country")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -230,8 +227,6 @@ namespace FootballApp.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ClubId");
 
                     b.ToTable("Stadiums");
                 });
@@ -462,7 +457,7 @@ namespace FootballApp.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("FootballApp.Data.Models.Stadium", "Stadium")
-                        .WithMany()
+                        .WithMany("Clubs")
                         .HasForeignKey("StadiumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -506,15 +501,6 @@ namespace FootballApp.Data.Migrations
                         .HasForeignKey("ClubId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Club");
-                });
-
-            modelBuilder.Entity("FootballApp.Data.Models.Stadium", b =>
-                {
-                    b.HasOne("FootballApp.Data.Models.Club", "Club")
-                        .WithMany()
-                        .HasForeignKey("ClubId");
 
                     b.Navigation("Club");
                 });
@@ -603,6 +589,11 @@ namespace FootballApp.Data.Migrations
                     b.Navigation("Clubs");
 
                     b.Navigation("Fixtures");
+                });
+
+            modelBuilder.Entity("FootballApp.Data.Models.Stadium", b =>
+                {
+                    b.Navigation("Clubs");
                 });
 #pragma warning restore 612, 618
         }
