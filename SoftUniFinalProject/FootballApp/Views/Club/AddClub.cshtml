@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
-        <form asp-action="Add" method="post">
+        <form asp-action="AddClub" method="post">
             <div class="mb-3">
                 <label asp-for="@Model.Name" class="form-label">Name</label>
                 <input asp-for="@Model.Name" class="form-control" aria-required="true" />
@@ -18,6 +18,11 @@
                 <label asp-for="@Model.Nickname" class="form-label">Nickname</label>
                 <input asp-for="@Model.Nickname" class="form-control" aria-required="true" />
                 <span asp-validation-for="@Model.Nickname" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.YearOfCreation" class="form-label">YearOfCreation</label>
+                <input type="number" asp-for="@Model.YearOfCreation" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.YearOfCreation" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label asp-for="@Model.Logo" class="form-label">Logo</label>
@@ -55,13 +60,18 @@
                 <span asp-validation-for="@Model.ConcededGoals" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="@Model.LeagueId" class="form-label">LeagueId</label>
-                <input type="number" asp-for="@Model.LeagueId" class="form-control" aria-required="true" />
-                <span asp-validation-for="@Model.LeagueId" class="text-danger"></span>
+                <label asp-for="@Model.League" class="form-label">League</label>
+                <input asp-for="@Model.League" class="form-control" aria-required="true" type="text" value="@Model.League.Name" disabled/>
+                <span asp-validation-for="@Model.League" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <label asp-for="@Model.StadiumId" class="form-label">StadiumId</label>
-                <input type="number" asp-for="@Model.StadiumId" class="form-control" aria-required="true" />
+                <label asp-for="@Model.StadiumId" class="form-label">Stadium</label>
+                <select asp-for="@Model.StadiumId" class="form-control">
+                    @foreach (var stadium in @Model.Stadiums)
+                    {
+                        <option value="@stadium.Id">@stadium.Name</option>
+                    }
+                </select>
                 <span asp-validation-for="@Model.StadiumId" class="text-danger"></span>
             </div>
             <div class="mb-3">

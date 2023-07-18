@@ -1,6 +1,4 @@
-﻿using FootballApp.Data.Models;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using static FootballApp.Common.EntityValidations.ClubValidations;
 
 namespace FootballApp.ViewModels.Club
@@ -47,10 +45,11 @@ namespace FootballApp.ViewModels.Club
         [Range(ConcededGoalsMinCount, int.MaxValue)]
         public int ConcededGoals { get; set; }
 
-        [Required]
-        public int LeagueId { get; set; }
+        public ClubAddLeagueViewModel? League { get; set; }
 
         [Required]
         public int StadiumId { get; set; }
+
+        public List<AddClubStadiumViewModel> Stadiums { get; set; } = new List<AddClubStadiumViewModel>();
     }
 }

@@ -1,4 +1,5 @@
-﻿using FootballApp.ViewModels.Club;
+﻿using FootballApp.Data.Models;
+using FootballApp.ViewModels.Club;
 
 namespace FootballApp.Services.Interfaces
 {
@@ -9,5 +10,7 @@ namespace FootballApp.Services.Interfaces
         public Task AddToFavoritesAsync(int clubId, string userId);
 
         public Task<bool> DoesClubExistsByIdAsync(int houseId);
+
+        public Task AddClubAsync(AddClubViewModel model);
     }
 }

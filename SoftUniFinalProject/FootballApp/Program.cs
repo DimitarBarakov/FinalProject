@@ -23,6 +23,7 @@ namespace FootballApp
             builder.Services.AddScoped<IPlayerService, PlayerService>();
             builder.Services.AddScoped<IFixtureService, FixtureService>();
             builder.Services.AddScoped<IUserClubService, UserClubService>();
+            builder.Services.AddScoped<IStadiumService, StadiumService>();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<FootballAppDbContext>();

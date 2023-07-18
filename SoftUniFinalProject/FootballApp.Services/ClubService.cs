@@ -106,5 +106,27 @@ namespace FootballApp.Services
 
             return result;
         }
+
+        public async Task AddClubAsync(AddClubViewModel model)
+        {
+            Club clubToAdd = new Club()
+            {
+                Name = model.Name,
+                Nickname = model.Nickname,
+                Logo = model.Logo,
+                YearOfCreation = model.YearOfCreation,
+                Wins = model.Wins,
+                Loses = model.Loses,
+                Draws = model.Draws,
+                MatchesPlayed = model.MatchesPlayed,
+                ScoredGoals = model.ScoredGoals,
+                ConcededGoals = model.ConcededGoals,
+                LeagueId = model.League.Id,
+                StadiumId = model.StadiumId
+            };
+
+            await dbContext.Clubs.AddAsync(clubToAdd);
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

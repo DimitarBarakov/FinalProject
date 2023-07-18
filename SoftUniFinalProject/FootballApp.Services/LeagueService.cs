@@ -4,6 +4,7 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.League;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
+using FootballApp.ViewModels.Club;
 
 namespace FootballApp.Services
 {
@@ -21,6 +22,20 @@ namespace FootballApp.Services
             bool res = await dbContext.Leagues.AnyAsync(l => l.Id == leagueId);
 
             return res;
+        }
+
+        public async Task<ClubAddLeagueViewModel> GetAddClubLeagueViewModelAsync(int leagueId)
+        {
+            ClubAddLeagueViewModel? league = await dbContext.Leagues
+                .Where(l => l.Id == leagueId)
+                .Select(l => new ClubAddLeagueViewModel()
+                {
+                    Id = l.Id,
+                    Name = l.Name
+                })
+                .FirstOrDefaultAsync();
+
+            return league!;
         }
 
         public async Task<List<AllLeaguesViewModel>> GetAllLeaguesAsync()
@@ -46,6 +61,7 @@ namespace FootballApp.Services
 
             var model = new LeaguePageViewModel()
             {
+                Id = league.Id,
                 Name = league.Name,
                 Country = league.Country,
                 Logo = league.Logo,

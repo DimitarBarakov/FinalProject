@@ -73,7 +73,7 @@
 <div id="fixturesTable" style="display:none">
     <partial name="_FixturesPartialView" model="@Model.Fixtures" />
 </div>
-<div class="container ">
-    <a asp-controller="Club" asp-action="AddClub" class="btn btn-danger btn-lg float-right">Add Club</a>
+<div class="container button-add">
+    <a asp-controller="Club" asp-action="AddClub" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Club</a>
 </div>
 <script src="~/js/LeagueByIdJS.js"></script>

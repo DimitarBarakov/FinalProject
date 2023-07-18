@@ -11,18 +11,38 @@ namespace FootballApp.Controllers
     {
         private readonly IClubService clubService;
         private readonly IUserClubService userClubService;
+        private readonly IStadiumService stadiumService;
+        private readonly ILeagueService leagueService;
 
-        public ClubController(IClubService service, IUserClubService ucservice)
+        public ClubController(IClubService service, IUserClubService ucservice, IStadiumService sservice, ILeagueService leagueService)
         {
             this.clubService = service;
-            userClubService = ucservice;
+            this.userClubService = ucservice;
+            this.stadiumService = sservice;
+            this.leagueService = leagueService;
         }
         //TODO: Only for admins
-        public IActionResult AddClub()
+        [HttpGet]
+        public async Task<IActionResult> AddClub(int id)
         {
             var model = new AddClubViewModel();
+            model.Stadiums = await stadiumService.GetStadiumsForAddClubViewModelAsync();
+            model.League = await leagueService.GetAddClubLeagueViewModelAsync(id);
 
             return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddClub(int id, AddClubViewModel model)
+        {
+            model.League = await leagueService.GetAddClubLeagueViewModelAsync(id);
+            if (!ModelState.IsValid)
+            {
+                model.Stadiums = await stadiumService.GetStadiumsForAddClubViewModelAsync();
+                model.League = await leagueService.GetAddClubLeagueViewModelAsync(id);
+                return View(model);
+            }
+            await clubService.AddClubAsync(model);
+            return RedirectToAction("ShowById", "League", new {id});
         }
         public async Task<IActionResult> ClubById(int id)
         {

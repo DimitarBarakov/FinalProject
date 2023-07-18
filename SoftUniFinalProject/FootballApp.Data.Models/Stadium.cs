@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using static FootballApp.Common.EntityValidations.StadiumValidations;
 
 namespace FootballApp.Data.Models
