@@ -44,5 +44,7 @@ namespace FootballApp.ViewModels.Player
         [Required]
         [Range(MatchesPlayedMinCount, int.MaxValue)]
         public int MatchesPlayed { get; set; }
+
+        public int? ClubId { get; set; }
     }
 }

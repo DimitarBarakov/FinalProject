@@ -57,6 +57,9 @@
 <div id="clubFixtures" style="display:none">
     <partial name="_FixturesPartialView" model="@Model.Fixtures" />
 </div>
+<div class="container button-add">
+    <a asp-controller="Player" asp-action="AddPlayer" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Player</a>
+</div>
 
 <script src="~/js/ClubByIdJS.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

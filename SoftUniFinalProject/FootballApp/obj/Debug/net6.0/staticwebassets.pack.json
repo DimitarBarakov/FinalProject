@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\imgs\\Players\\Bruno.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Casemiro.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Casemiro.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\ClubByIdJS.js",
       "PackagePath": "staticwebassets\\js\\ClubByIdJS.js"
     },

@@ -27,5 +27,25 @@ namespace FootballApp.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public IActionResult AddPlayer()
+        {
+            AddPlayerViewModel model = new AddPlayerViewModel();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddPlayer(int id, AddPlayerViewModel model)
+        {
+            model.ClubId = id;
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await playerService.AddPlayerAsync(id, model);
+            return RedirectToAction("ClubById", "Club", new {id});
+        }
     }
 }

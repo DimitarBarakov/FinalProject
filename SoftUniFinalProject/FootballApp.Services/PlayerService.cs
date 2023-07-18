@@ -45,5 +45,26 @@ namespace FootballApp.Services
 
             return doesPlayerExists;
         }
+
+        public async Task AddPlayerAsync(int id, AddPlayerViewModel model)
+        {
+            Player playerToAdd = new Player()
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Age = model.Age,
+                Number = model.Number,
+                Goals = model.Goals,
+                Assists = model.Assists,
+                ClubId = id,
+                MatchesPlayed = model.MatchesPlayed,
+                Country = model.Country,
+                Position = model.Position,
+                Picture = model.Picture
+            };
+
+            await dbContext.Players.AddAsync(playerToAdd);
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

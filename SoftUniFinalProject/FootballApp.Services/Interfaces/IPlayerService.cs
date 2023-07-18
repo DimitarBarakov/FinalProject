@@ -6,5 +6,7 @@ namespace FootballApp.Services.Interfaces
     {
         public Task<PlayerPageViewModel?> GetPlayerByIdAsync(int playerId);
         public Task<bool> DoesPlayerExistsByIdAsync(int playerId);
+
+        public Task AddPlayerAsync(int id, AddPlayerViewModel model);
     }
 }
