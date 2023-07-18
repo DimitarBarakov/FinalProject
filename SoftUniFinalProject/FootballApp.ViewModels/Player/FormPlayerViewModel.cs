@@ -3,7 +3,7 @@ using static FootballApp.Common.EntityValidations.PlayerValidations;
 
 namespace FootballApp.ViewModels.Player
 {
-    public class AddPlayerViewModel
+    public class FormPlayerViewModel
     {
         [Required]
         [StringLength(FirstNameMaxLength, MinimumLength = FirstNameMinLength)]
@@ -45,6 +45,6 @@ namespace FootballApp.ViewModels.Player
         [Range(MatchesPlayedMinCount, int.MaxValue)]
         public int MatchesPlayed { get; set; }
 
-        public int? ClubId { get; set; }
+        public int ClubId { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Player;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Metrics;
 
 namespace FootballApp.Services
 {
@@ -22,6 +23,7 @@ namespace FootballApp.Services
 
             PlayerPageViewModel? model = new PlayerPageViewModel()
             {
+                Id = player.Id,
                 Picture = player!.Picture,
                 Name = $"{player.FirstName} {player.LastName}",
                 MatchesPlayed = player.MatchesPlayed,
@@ -46,7 +48,7 @@ namespace FootballApp.Services
             return doesPlayerExists;
         }
 
-        public async Task AddPlayerAsync(int id, AddPlayerViewModel model)
+        public async Task AddPlayerAsync(int id, FormPlayerViewModel model)
         {
             Player playerToAdd = new Player()
             {
@@ -64,6 +66,31 @@ namespace FootballApp.Services
             };
 
             await dbContext.Players.AddAsync(playerToAdd);
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<Player?> GetPlayerAsync(int playerId)
+        {
+            Player? player = await dbContext.Players.FindAsync(playerId);
+
+            return player;
+        }
+
+        public async Task EditPlayerAsync(int id, FormPlayerViewModel model)
+        {
+            Player? edittedPlayer = await GetPlayerAsync(id);
+            edittedPlayer.FirstName = model.FirstName;
+            edittedPlayer.LastName = model.LastName;
+            edittedPlayer.Age = model.Age;
+            edittedPlayer.Number = model.Number;
+            edittedPlayer.Goals = model.Goals;
+            edittedPlayer.Assists = model.Assists;
+            //edittedPlayer.ClubId = model.ClubId;
+            edittedPlayer.MatchesPlayed = model.MatchesPlayed;
+            edittedPlayer.Country = model.Country;
+            edittedPlayer.Position = model.Position;
+            edittedPlayer.Picture = model.Picture;
+
             await dbContext.SaveChangesAsync();
         }
     }
