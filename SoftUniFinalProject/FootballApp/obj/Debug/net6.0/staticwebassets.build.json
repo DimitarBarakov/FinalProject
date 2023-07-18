@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "jAcexW2udQB1nZml5cf3jT/2PLdlwxcDlO4ykmZwQ1M=",
+  "Hash": "E2VPtqoAdxlJEiqxBT9sdqTeYIVskwjpzjTEWK7tMBg=",
   "Source": "FootballApp",
   "BasePath": "_content/FootballApp",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\imgs\\Clubs\\Manchester United.png"
+    },
+    {
+      "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Leagues\\Bundesliga.png",
+      "SourceId": "FootballApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\",
+      "BasePath": "_content/FootballApp",
+      "RelativePath": "imgs/Leagues/Bundesliga.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\Leagues\\Bundesliga.png"
     },
     {
       "Identity": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Leagues\\La Liga.png",

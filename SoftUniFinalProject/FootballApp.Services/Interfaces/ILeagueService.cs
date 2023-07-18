@@ -12,5 +12,7 @@ namespace FootballApp.Services.Interfaces
         public Task<bool> DoesLeagueExistsByIdAsync(int leagueId);
 
         public Task<ClubAddLeagueViewModel> GetAddClubLeagueViewModelAsync(int leagueId);
+
+        public Task AddLeagueAsync(AddLeagueViewModel model);
     }
 }

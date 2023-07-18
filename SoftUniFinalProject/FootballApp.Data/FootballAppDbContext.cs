@@ -17,6 +17,7 @@ namespace FootballApp.Data
         public DbSet<Stadium> Stadiums { get; set; }
         public DbSet<Fixture> Fixtures { get; set; }
         public DbSet<UserClub> FavoriteClubs { get; set; }
+        public DbSet<Position> Positions { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

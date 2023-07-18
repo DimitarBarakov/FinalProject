@@ -17,6 +17,19 @@ namespace FootballApp.Services
             this.dbContext = context;
         }
 
+        public async Task AddLeagueAsync(AddLeagueViewModel model)
+        {
+            League leagueToAdd = new League()
+            {
+                Name = model.Name,
+                Country = model.Country,
+                Logo = model.Logo
+            };
+
+            await dbContext.Leagues.AddAsync(leagueToAdd);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<bool> DoesLeagueExistsByIdAsync(int leagueId)
         {
             bool res = await dbContext.Leagues.AnyAsync(l => l.Id == leagueId);

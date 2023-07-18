@@ -191,11 +191,34 @@ namespace FootballApp.Data.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
+                    b.Property<int?>("PositionId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ClubId");
 
+                    b.HasIndex("PositionId");
+
                     b.ToTable("Players");
+                });
+
+            modelBuilder.Entity("FootballApp.Data.Models.Position", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Positions");
                 });
 
             modelBuilder.Entity("FootballApp.Data.Models.Stadium", b =>
@@ -502,6 +525,10 @@ namespace FootballApp.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("FootballApp.Data.Models.Position", null)
+                        .WithMany("Players")
+                        .HasForeignKey("PositionId");
+
                     b.Navigation("Club");
                 });
 
@@ -589,6 +616,11 @@ namespace FootballApp.Data.Migrations
                     b.Navigation("Clubs");
 
                     b.Navigation("Fixtures");
+                });
+
+            modelBuilder.Entity("FootballApp.Data.Models.Position", b =>
+                {
+                    b.Navigation("Players");
                 });
 
             modelBuilder.Entity("FootballApp.Data.Models.Stadium", b =>

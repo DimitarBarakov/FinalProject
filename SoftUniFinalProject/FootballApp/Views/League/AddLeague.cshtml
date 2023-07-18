@@ -1,5 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model AddLeagueViewModel
 @{
+    ViewBag.Title = "Add League";
+}
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form asp-action="AddLeague" method="post">
+            <div class="mb-3">
+                <label asp-for="@Model.Name" class="form-label">Name</label>
+                <input asp-for="@Model.Name" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.Name" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Country" class="form-label">Country</label>
+                <input asp-for="@Model.Country" class="form-control" aria-required="true" />
+                <span asp-validation-for="@Model.Country" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Logo" class="form-label">Logo</label>
+                <textarea asp-for="@Model.Logo" class="form-control" aria-required="true"></textarea>
+                <span asp-validation-for="Logo" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Add" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

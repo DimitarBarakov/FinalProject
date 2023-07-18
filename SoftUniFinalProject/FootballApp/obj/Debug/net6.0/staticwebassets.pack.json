@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\imgs\\Clubs\\Manchester United.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Leagues\\Bundesliga.png",
+      "PackagePath": "staticwebassets\\imgs\\Leagues\\Bundesliga.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Leagues\\La Liga.png",
       "PackagePath": "staticwebassets\\imgs\\Leagues\\La Liga.png"
     },

@@ -50,6 +50,12 @@
 
             public const int PictureMaxLength = 2048;
 
+            public const int NumberMinValue = 1;
+            public const int NumberMaxValue = 99;
+
+            public const int AgeMinValue = 15;
+            public const int AgeMaxValue = 60;
+
             public const int GoalsMinCount = 0;
             public const int AssistsMinCount = 0;
             public const int MatchesPlayedMinCount = 0;

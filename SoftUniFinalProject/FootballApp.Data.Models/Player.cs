@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime;
 using static FootballApp.Common.EntityValidations.PlayerValidations;
 
 namespace FootballApp.Data.Models
