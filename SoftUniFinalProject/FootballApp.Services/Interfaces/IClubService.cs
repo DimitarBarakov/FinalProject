@@ -11,6 +11,10 @@ namespace FootballApp.Services.Interfaces
 
         public Task<bool> DoesClubExistsByIdAsync(int houseId);
 
-        public Task AddClubAsync(AddClubViewModel model);
+        public Task AddClubAsync(FormClubViewModel model);
+
+        public Task EditClubAsync(int id, FormClubViewModel model);
+
+        public Task<Club> GetClubAsync(int clubId);
     }
 }

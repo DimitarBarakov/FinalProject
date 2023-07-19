@@ -1,4 +1,5 @@
-﻿using FootballApp.Services.Interfaces;
+﻿using FootballApp.Data.Models;
+using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,14 +26,16 @@ namespace FootballApp.Controllers
         [HttpGet]
         public async Task<IActionResult> AddClub(int id)
         {
-            var model = new AddClubViewModel();
+            var model = new FormClubViewModel();
             model.Stadiums = await stadiumService.GetStadiumsForAddClubViewModelAsync();
             model.League = await leagueService.GetAddClubLeagueViewModelAsync(id);
 
             return View(model);
         }
+
+        //TODO: Only for admins
         [HttpPost]
-        public async Task<IActionResult> AddClub(int id, AddClubViewModel model)
+        public async Task<IActionResult> AddClub(int id, FormClubViewModel model)
         {
             model.League = await leagueService.GetAddClubLeagueViewModelAsync(id);
             if (!ModelState.IsValid)
@@ -82,6 +85,42 @@ namespace FootballApp.Controllers
             List<FavoriteCLubsViewModel> model = await userClubService.GetFavoriteClubsAsync(id, userId);
 
             return View(model);
+        }
+
+        //TODO: Only for admins
+        [HttpGet]
+        public async Task<IActionResult> EditClub(int id)
+        {
+            Club clubToEdit = await clubService.GetClubAsync(id);
+            FormClubViewModel model = new FormClubViewModel() 
+            {
+                Name = clubToEdit.Name,
+                Nickname = clubToEdit.Nickname,
+                Logo = clubToEdit.Logo,
+                YearOfCreation = clubToEdit.YearOfCreation,
+                Wins = clubToEdit.Wins,
+                Loses = clubToEdit.Loses,
+                Draws = clubToEdit.Draws,
+                MatchesPlayed = clubToEdit.MatchesPlayed,
+                ScoredGoals = clubToEdit.ScoredGoals,
+                ConcededGoals = clubToEdit.ConcededGoals,
+                StadiumId = clubToEdit.StadiumId
+            };
+            model.Stadiums = await stadiumService.GetStadiumsForAddClubViewModelAsync();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditClub(int id, FormClubViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await clubService.EditClubAsync(id, model);
+            return RedirectToAction("ClubById", "Club", new { id });
         }
     }
 }

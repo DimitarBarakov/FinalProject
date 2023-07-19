@@ -61,6 +61,10 @@
     <a asp-controller="Player" asp-action="AddPlayer" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Player</a>
 </div>
 
+<div class="container button-add">
+    <a asp-controller="Club" asp-action="EditClub" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Club</a>
+</div>
+
 <script src="~/js/ClubByIdJS.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script>

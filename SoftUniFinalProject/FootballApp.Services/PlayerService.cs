@@ -85,7 +85,6 @@ namespace FootballApp.Services
             edittedPlayer.Number = model.Number;
             edittedPlayer.Goals = model.Goals;
             edittedPlayer.Assists = model.Assists;
-            //edittedPlayer.ClubId = model.ClubId;
             edittedPlayer.MatchesPlayed = model.MatchesPlayed;
             edittedPlayer.Country = model.Country;
             edittedPlayer.Position = model.Position;

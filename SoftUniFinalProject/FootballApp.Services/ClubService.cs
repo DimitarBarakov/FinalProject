@@ -4,7 +4,7 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
+using System.Xml.Linq;
 
 namespace FootballApp.Services
 {
@@ -107,7 +107,7 @@ namespace FootballApp.Services
             return result;
         }
 
-        public async Task AddClubAsync(AddClubViewModel model)
+        public async Task AddClubAsync(FormClubViewModel model)
         {
             Club clubToAdd = new Club()
             {
@@ -127,6 +127,32 @@ namespace FootballApp.Services
 
             await dbContext.Clubs.AddAsync(clubToAdd);
             await dbContext.SaveChangesAsync();
+        }
+
+        public async Task EditClubAsync(int id, FormClubViewModel model)
+        {
+            Club clubToEdit = await GetClubAsync(id);
+
+            clubToEdit.Name = model.Name;
+            clubToEdit.Nickname = model.Nickname;
+            clubToEdit.Logo = model.Logo;
+            clubToEdit.YearOfCreation = model.YearOfCreation;
+            clubToEdit.Wins = model.Wins;
+            clubToEdit.Loses = model.Loses;
+            clubToEdit.Draws = model.Draws;
+            clubToEdit.MatchesPlayed = model.MatchesPlayed;
+            clubToEdit.ScoredGoals = model.ScoredGoals;
+            clubToEdit.ConcededGoals = model.ConcededGoals;
+            clubToEdit.StadiumId = model.StadiumId;
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task<Club> GetClubAsync(int clubId)
+        {
+            Club? club = await dbContext.Clubs.FindAsync(clubId);
+
+            return club!;
         }
     }
 }
