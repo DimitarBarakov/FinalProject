@@ -1,4 +1,5 @@
-﻿using FootballApp.Services.Interfaces;
+﻿using FootballApp.Data.Models;
+using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.League;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -40,13 +41,13 @@ namespace FootballApp.Controllers
         [HttpGet]
         public async Task<IActionResult> AddLeague()
         {
-            AddLeagueViewModel model = new AddLeagueViewModel();
+            FormLeagueViewModel model = new FormLeagueViewModel();
 
             return View(model);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddLeague(AddLeagueViewModel model)
+        public async Task<IActionResult> AddLeague(FormLeagueViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -55,6 +56,31 @@ namespace FootballApp.Controllers
 
             await leagueService.AddLeagueAsync(model);
             return RedirectToAction("All");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditLeague(int id)
+        {
+            League league = await leagueService.GetLeagueAsync(id);
+
+            FormLeagueViewModel model = new FormLeagueViewModel();
+            model.Name = league.Name;
+            model.Country = league.Country;
+            model.Logo = league.Logo;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> EditLeague(int id, FormLeagueViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await leagueService.EditLeagueAsync(id, model);
+            return RedirectToAction("ShowById", "League", new {id});
         }
     }
 }

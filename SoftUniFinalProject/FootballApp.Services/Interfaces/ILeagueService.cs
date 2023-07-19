@@ -1,4 +1,5 @@
-﻿using FootballApp.ViewModels.Club;
+﻿using FootballApp.Data.Models;
+using FootballApp.ViewModels.Club;
 using FootballApp.ViewModels.League;
 
 namespace FootballApp.Services.Interfaces
@@ -13,6 +14,10 @@ namespace FootballApp.Services.Interfaces
 
         public Task<ClubAddLeagueViewModel> GetAddClubLeagueViewModelAsync(int leagueId);
 
-        public Task AddLeagueAsync(AddLeagueViewModel model);
+        public Task AddLeagueAsync(FormLeagueViewModel model);
+
+        public Task<League> GetLeagueAsync(int leagueId);
+
+        public Task EditLeagueAsync(int leagueId, FormLeagueViewModel model);
     }
 }

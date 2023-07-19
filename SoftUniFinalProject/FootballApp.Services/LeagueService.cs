@@ -17,7 +17,7 @@ namespace FootballApp.Services
             this.dbContext = context;
         }
 
-        public async Task AddLeagueAsync(AddLeagueViewModel model)
+        public async Task AddLeagueAsync(FormLeagueViewModel model)
         {
             League leagueToAdd = new League()
             {
@@ -35,6 +35,17 @@ namespace FootballApp.Services
             bool res = await dbContext.Leagues.AnyAsync(l => l.Id == leagueId);
 
             return res;
+        }
+
+        public async Task EditLeagueAsync(int leagueId, FormLeagueViewModel model)
+        {
+            League leagueToEdit = await GetLeagueAsync(leagueId);
+
+            leagueToEdit.Name = model.Name;
+            leagueToEdit.Logo = model.Logo;
+            leagueToEdit.Country = model.Country;
+
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task<ClubAddLeagueViewModel> GetAddClubLeagueViewModelAsync(int leagueId)
@@ -63,6 +74,11 @@ namespace FootballApp.Services
                 .ToListAsync();
 
             return leagues;
+        }
+
+        public async Task<League> GetLeagueAsync(int leagueId)
+        {
+            return await dbContext.Leagues.FindAsync(leagueId);
         }
 
         public async Task<LeaguePageViewModel> GetLeagueByIdAsync(int leagueId)

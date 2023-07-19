@@ -78,7 +78,7 @@ namespace FootballApp.Controllers
             await clubService.AddToFavoritesAsync(id, userId);
             return RedirectToAction("FavoriteClubs");
         }
-
+        [Authorize]
         public async Task<IActionResult> FavoriteClubs(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
