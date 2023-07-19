@@ -3,6 +3,7 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Configuration;
 using System.Security.Claims;
 using static FootballApp.Common.NotificationMessagesConstants;
 
@@ -92,6 +93,10 @@ namespace FootballApp.Controllers
         public async Task<IActionResult> EditClub(int id)
         {
             Club clubToEdit = await clubService.GetClubAsync(id);
+            if (clubToEdit == null)
+            {
+                return NotFound("Club with this id does not exists");
+            }
             FormClubViewModel model = new FormClubViewModel() 
             {
                 Name = clubToEdit.Name,
@@ -121,6 +126,15 @@ namespace FootballApp.Controllers
 
             await clubService.EditClubAsync(id, model);
             return RedirectToAction("ClubById", "Club", new { id });
+        }
+
+        public async Task<IActionResult> RemoveFromFavorites(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            await userClubService.RemoveFromFavorites(id,userId);
+            TempData[SuccessMessage] = $"Successfully removed club from favorites";
+
+            return RedirectToAction("FavoriteClubs");
         }
     }
 }

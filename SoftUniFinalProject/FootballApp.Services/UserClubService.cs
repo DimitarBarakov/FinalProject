@@ -1,4 +1,5 @@
 ﻿using FootballApp.Data;
+using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using Microsoft.EntityFrameworkCore;
@@ -34,6 +35,14 @@ namespace FootballApp.Services
                 }).ToListAsync();
 
             return favoriteClubs;
+        }
+
+        public async Task RemoveFromFavorites(int clubId, string userId)
+        {
+            UserClub? clubToRemove = await dbContext.FavoriteClubs.Where(fc=>fc.UserId == userId).FirstOrDefaultAsync();
+
+            dbContext.FavoriteClubs.Remove(clubToRemove!);
+            await dbContext.SaveChangesAsync();
         }
     }
 }
