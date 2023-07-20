@@ -3,19 +3,21 @@
 @foreach (var fixture in Model)
 {
     <div class="container card">
-        <div class="row">
-            <div class="col-md-4 aligner">@fixture.HomeClub.Name</div>
-            <div class="col-md-4 aligner">@fixture.StartTime</div>
-            <div class="col-md-4 aligner">@fixture.AwayClub.Name</div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 aligner">
-                <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.HomeClub.Logo)">
+        <a asp-controller="Fixture" asp-action="FixtureById" asp-route-id ="@fixture.Id" style="text-decoration: none" class="link-dark">
+            <div class="row">
+                <div class="col-md-4 aligner">@fixture.HomeClub.Name</div>
+                <div class="col-md-4 aligner">@fixture.StartTime</div>
+                <div class="col-md-4 aligner">@fixture.AwayClub.Name</div>
             </div>
-            <div class="col-md-4 aligner">-</div>
-            <div class="col-md-4 aligner">
-                <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.AwayClub.Logo)">
+            <div class="row">
+                <div class="col-md-4 aligner">
+                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.HomeClub.Logo)">
+                </div>
+                <div class="col-md-4 aligner">-</div>
+                <div class="col-md-4 aligner">
+                    <img class="standings-club-logo" src="~/imgs/Clubs/@(fixture.AwayClub.Logo)">
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 }

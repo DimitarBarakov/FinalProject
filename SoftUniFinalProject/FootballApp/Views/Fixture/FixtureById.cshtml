@@ -1,0 +1,23 @@
+﻿@model AllFixturesViewModel
+@{
+    ViewBag.Title = $"{Model.HomeClub.Name} - {Model.AwayClub.Name}";
+}
+<div class="container card">
+    <div class="row">
+        <div class="col-md-4 aligner">@Model.HomeClub.Name</div>
+        <div class="col-md-4 aligner">@Model.StartTime</div>
+        <div class="col-md-4 aligner">@Model.AwayClub.Name</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 aligner">
+            <a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.HomeClub.Id"><img class="page-club-logo" src="~/imgs/Clubs/@(Model.HomeClub.Logo)"></a>
+        </div>
+        <div class="col-md-4 aligner">-</div>
+        <div class="col-md-4 aligner">
+            <a asp-controller="Club" asp-action="ClubById" asp-route-id="@Model.AwayClub.Id"><img class="page-club-logo" src="~/imgs/Clubs/@(Model.AwayClub.Logo)"></a>
+        </div>
+    </div>
+    <div class="row">
+        <a asp-controller="Stadium" asp-action="StadiumById" asp-route-id="@Model.Stadium.Id" style="text-decoration:none" class="link-dark"><div class="col-md-12 aligner">@Model.Stadium.Name</div></a>
+    </div>
+</div>
