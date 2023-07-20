@@ -49,6 +49,18 @@
       "PackagePath": "staticwebassets\\imgs\\Players\\Casemiro.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Stadiums\\Anfiled.png",
+      "PackagePath": "staticwebassets\\imgs\\Stadiums\\Anfiled.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Stadiums\\Old Trafford.png",
+      "PackagePath": "staticwebassets\\imgs\\Stadiums\\Old Trafford.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Stadiums\\Stamford Bridge.png",
+      "PackagePath": "staticwebassets\\imgs\\Stadiums\\Stamford Bridge.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\js\\ClubByIdJS.js",
       "PackagePath": "staticwebassets\\js\\ClubByIdJS.js"
     },

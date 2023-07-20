@@ -53,7 +53,11 @@ namespace FootballApp.Services
                 Logo = club.Logo,
                 Name = club.Name,
                 Nickname = club.Nickname,
-                Stadium = club.Stadium,
+                Stadium = new ClubPageStadiumViewModel
+                {
+                    Id = club.Stadium.Id,
+                    Name = club.Stadium.Name
+                },
                 Players = club.Players
                 .Select(p => new ClubPagePlayerViewModel()
                 {

@@ -11,7 +11,7 @@ namespace FootballApp.ViewModels.Club
 
         public string? Nickname { get; set; }
 
-        public Stadium Stadium { get; set; } = null!;
+        public ClubPageStadiumViewModel Stadium{ get; set; } = null!;
 
         public List<ClubPagePlayerViewModel> Players { get; set; } = new List<ClubPagePlayerViewModel>();
         public List<AllFixturesViewModel> Fixtures { get; set; } = new List<AllFixturesViewModel>();

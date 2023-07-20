@@ -1,0 +1,18 @@
+﻿@model StadiumPageViewModel
+
+<div class="row">
+    <div class="card flex-row league-card col-md-6">
+        <div class="card-body">
+            <h2 class="card-title h5 h4-sm display-4">
+                @Model.Name
+            </h2>
+            <p class="card-text">Country: @Model.Country</p>
+            <p class="card-text">City: @Model.City</p>
+            <p class="card-text">Adrress: @Model.Adrress</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <iframe src="@Model.Location" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
+

@@ -24,6 +24,9 @@ namespace FootballApp.Data.Models
         [MaxLength(AddressMaxLength)]
         public string Address { get; set; } = null!;
 
+        [Required]
+        public string Photo { get; set; } = null!;
+
         public virtual List<Club> Clubs { get; set; } = new List<Club>();
     }
 }
