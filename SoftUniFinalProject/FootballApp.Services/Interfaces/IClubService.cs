@@ -1,5 +1,6 @@
 ﻿using FootballApp.Data.Models;
 using FootballApp.ViewModels.Club;
+using FootballApp.ViewModels.Fixture;
 
 namespace FootballApp.Services.Interfaces
 {
@@ -16,5 +17,7 @@ namespace FootballApp.Services.Interfaces
         public Task EditClubAsync(int id, FormClubViewModel model);
 
         public Task<Club> GetClubAsync(int clubId);
+
+        public Task<List<AddFixtureClubViewModel>> GetAddFixtureClubViewModelsAsync();
     }
 }

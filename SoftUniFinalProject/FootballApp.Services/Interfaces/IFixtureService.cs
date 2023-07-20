@@ -10,5 +10,7 @@ namespace FootballApp.Services.Interfaces
         public Task<AllFixturesViewModel> GetFixtureViewModelByIdAsync(int id);
 
         public Task<Fixture> GetFixtureAsync(int id);
+
+        public Task AddFixtureAsync(FixtureAddViewModel model);
     }
 }

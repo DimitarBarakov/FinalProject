@@ -15,6 +15,21 @@ namespace FootballApp.Services
         {
             dbContext = context;
         }
+
+        public async Task AddFixtureAsync(FixtureAddViewModel model)
+        {
+            Fixture fixtureToAdd = new Fixture()
+            {
+                HomeClubId = model.HomeClubId,
+                AwayClubId = model.AwayClubId,
+                StartTime = model.StartTime,
+                LeagueId = model.LeagueId
+            };
+
+            await dbContext.Fixtures.AddAsync(fixtureToAdd);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<List<AllFixturesViewModel>> GetAllFixturesAsync()
         {
             var fixtures = await dbContext.Fixtures

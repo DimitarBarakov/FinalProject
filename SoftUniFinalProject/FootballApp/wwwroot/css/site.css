@@ -61,3 +61,6 @@ body {
     margin-top: 10px;
     float:left;
 }
+.nav-item:hover{
+    cursor:pointer;
+}

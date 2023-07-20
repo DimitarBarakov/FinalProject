@@ -158,5 +158,19 @@ namespace FootballApp.Services
 
             return club!;
         }
+
+        public async Task<List<AddFixtureClubViewModel>> GetAddFixtureClubViewModelsAsync()
+        {
+            List<AddFixtureClubViewModel> models = await dbContext.Clubs.
+                Select(c => new AddFixtureClubViewModel()
+                {
+                    Id = c.Id,
+                    Name = c.Name,
+                    LeagueId = c.LeagueId
+                })
+                .ToListAsync();
+
+            return models;
+        }
     }
 }

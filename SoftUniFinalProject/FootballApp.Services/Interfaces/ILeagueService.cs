@@ -1,6 +1,8 @@
 ﻿using FootballApp.Data.Models;
 using FootballApp.ViewModels.Club;
+using FootballApp.ViewModels.Fixture;
 using FootballApp.ViewModels.League;
+using Microsoft.EntityFrameworkCore;
 
 namespace FootballApp.Services.Interfaces
 {
@@ -19,5 +21,7 @@ namespace FootballApp.Services.Interfaces
         public Task<League> GetLeagueAsync(int leagueId);
 
         public Task EditLeagueAsync(int leagueId, FormLeagueViewModel model);
+
+        public Task<List<AddFixtureLeagueViewModel>> GetAddFixtureLeagueViewModelsAsync();
     }
 }
