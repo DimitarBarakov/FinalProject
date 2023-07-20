@@ -1,5 +1,9 @@
 ﻿@model StadiumPageViewModel
 
+@{
+    ViewBag.Title = Model.Name;
+}
+
 <div class="row">
     <div class="card flex-row league-card col-md-6">
         <div class="card-body">
@@ -14,5 +18,9 @@
     <div class="col-md-6">
         <iframe src="@Model.Location" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
+</div>
+
+<div class="container button-add" style="margin-bottom:120px">
+    <a asp-controller="Stadium" asp-action="EditStadium" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Stadium</a>
 </div>
 

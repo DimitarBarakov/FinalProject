@@ -16,6 +16,20 @@ namespace FootballApp.Services
             dbContext = context;
         }
 
+        public async Task EditStadiumAsync(int stadiumId, StadiumFormViewModel model)
+        {
+            Stadium stadiumToEdit = await GetStadiumByIdAsync(stadiumId);
+
+            stadiumToEdit.Location = model.Location;
+            stadiumToEdit.City = model.City;
+            stadiumToEdit.Country = model.Country;
+            stadiumToEdit.Address = model.Address;
+            stadiumToEdit.Name = model.Name;
+
+            await dbContext.SaveChangesAsync();
+
+        }
+
         public async Task<Stadium> GetStadiumByIdAsync(int stadiumId)
         {
             return await dbContext.Stadiums.FindAsync(stadiumId);
@@ -28,7 +42,7 @@ namespace FootballApp.Services
             StadiumPageViewModel model = new StadiumPageViewModel()
             {
                 Id = stadium.Id,
-                Location = stadium.Photo,
+                Location = stadium.Location,
                 Name = stadium.Name,
                 City = stadium.City,
                 Adrress = stadium.Address,

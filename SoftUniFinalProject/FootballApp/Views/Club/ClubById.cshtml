@@ -61,12 +61,14 @@
     <a asp-controller="Player" asp-action="AddPlayer" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Player</a>
 </div>
 
-<div class="container button-add">
+<div class="container button-add" style="margin-bottom:120px">
     <a asp-controller="Club" asp-action="EditClub" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Club</a>
 </div>
 
+
 <script src="~/js/ClubByIdJS.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
     var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
     var popoverList = popoverTriggerList.map(function (popoverTigger) {

@@ -1,32 +1,27 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using static FootballApp.Common.EntityValidations.StadiumValidations;
 
-namespace FootballApp.Data.Models
+namespace FootballApp.ViewModels.Stadium
 {
-    public class Stadium
+    public class StadiumFormViewModel
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
-        [MaxLength(NameMaxLength)]
+        [StringLength(NameMaxLength, MinimumLength = NameMinLength)]
         public string Name { get; set; } = null!;
 
         [Required]
-        [MaxLength(CountryMaxLength)]
+        [StringLength(CountryMaxLength, MinimumLength = CountryMinLength)]
         public string Country { get; set; } = null!;
 
         [Required]
-        [MaxLength(CityMaxLength)]
+        [StringLength(CityMaxLength, MinimumLength = CityMinLength)]
         public string City { get; set; } = null!;
 
         [Required]
-        [MaxLength(AddressMaxLength)]
+        [StringLength(AddressMaxLength, MinimumLength = AddressMinLength)]
         public string Address { get; set; } = null!;
 
         [Required]
         public string Location { get; set; } = null!;
-
-        public virtual List<Club> Clubs { get; set; } = new List<Club>();
     }
 }
