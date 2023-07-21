@@ -74,6 +74,9 @@
 
             public const int AddressMaxLength = 150;
             public const int AddressMinLength = 10;
+
+            public const int MinCapacity = 0;
+            public const int MaxCapacity = int.MaxValue;
         }
     }
 }

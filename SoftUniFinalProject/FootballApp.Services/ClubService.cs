@@ -71,7 +71,7 @@ namespace FootballApp.Services
                 .Select(f => new AllFixturesViewModel()
                 {
                     Id = f.Id,
-                    StartTime = f.StartTime.ToString(),
+                    StartTime = f.StartTime.ToString("dd/MM/yyyy hh:mm tt"),
                     HomeClub = new FixtureClubViewModel()
                     {
                         Id = f.HomeClub.Id,
@@ -85,24 +85,14 @@ namespace FootballApp.Services
                         Logo = f.AwayClub.Logo
                     },
                 }).Concat(awayFixtures)
+                .OrderBy(f =>DateTime.Parse(f.StartTime))
                 .ToList()
             };
 
             return model;
         }
 
-        public async Task AddToFavoritesAsync(int clubId, string userId)
-        {
-            Club? club = await dbContext.Clubs.FindAsync(clubId);
-            UserClub userClub = new UserClub()
-            {
-                ClubId = club!.Id,
-                UserId = userId
-            };
-
-            await dbContext.FavoriteClubs.AddAsync(userClub);
-            dbContext.SaveChanges();
-        }
+        
 
         public async Task<bool> DoesClubExistsByIdAsync(int clubId)
         {

@@ -35,6 +35,7 @@ namespace FootballApp.Services
             var fixtures = await dbContext.Fixtures
                 .Include(f => f.HomeClub)
                 .Include(f => f.AwayClub)
+                .OrderBy(f=>f.StartTime)
                 .Select(f => new AllFixturesViewModel()
                 {
                     Id = f.Id,
@@ -73,7 +74,7 @@ namespace FootballApp.Services
             AllFixturesViewModel viewModel = new AllFixturesViewModel()
             {
                 Id = fixture.Id,
-                StartTime = fixture.StartTime.ToString(),
+                StartTime = fixture.StartTime.ToString("dd/MM/yyyy hh:mm tt"),
                 AwayClub = new FixtureClubViewModel
                 {
                     Name = fixture.AwayClub.Name,

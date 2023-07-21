@@ -23,5 +23,9 @@ namespace FootballApp.ViewModels.Stadium
 
         [Required]
         public string Location { get; set; } = null!;
+
+        [Required]
+        [Range(MinCapacity, MaxCapacity)]
+        public int Capacity { get; set; }
     }
 }

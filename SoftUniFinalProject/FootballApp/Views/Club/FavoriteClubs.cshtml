@@ -6,22 +6,10 @@
 
 @if (Model.Count == 0)
 {
-    <h1>You don't have clubs added to favorites</h1>
+    <h1>You don't have favorite clubs added</h1>
 }
 else
 {
-    @*<table class="table">
-        <tbody>
-            @foreach (var club in Model)
-            {
-                <tr class="align-items-center">
-                    <td class="standing-td" style="width:20px"><img src="~/imgs/Clubs/@(club.Logo)" class="standings-club-logo"></td>
-                    <td class="standing-td align-items-right">@club.Name</td>
-                    <td class="standing-td" style="width:20px"><img src="~/imgs/Leagues/@(club.LeagueLogo)" class="standings-club-logo"></td>
-                </tr>
-            }
-        </tbody>
-    </table>*@
     <div class="container">
         <div class="row">
             <div class="col-12">

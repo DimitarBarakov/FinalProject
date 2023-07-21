@@ -27,6 +27,9 @@ namespace FootballApp.Data.Models
         [Required]
         public string Location { get; set; } = null!;
 
+        [Required]
+        public int Capacity { get; set; }
+
         public virtual List<Club> Clubs { get; set; } = new List<Club>();
     }
 }

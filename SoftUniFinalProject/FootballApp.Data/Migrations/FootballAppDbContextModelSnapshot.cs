@@ -234,6 +234,9 @@ namespace FootballApp.Data.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
                     b.Property<string>("City")
                         .IsRequired()
                         .HasMaxLength(20)

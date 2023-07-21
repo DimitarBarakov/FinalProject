@@ -8,7 +8,7 @@ namespace FootballApp.Services.Interfaces
     {
         public Task<ClubPageViewModel?> GetClubByIdAsync(int clubId);
 
-        public Task AddToFavoritesAsync(int clubId, string userId);
+        //public Task AddToFavoritesAsync(int clubId, string userId);
 
         public Task<bool> DoesClubExistsByIdAsync(int houseId);
 

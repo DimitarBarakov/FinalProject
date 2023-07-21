@@ -44,5 +44,17 @@ namespace FootballApp.Services
             dbContext.FavoriteClubs.Remove(clubToRemove!);
             await dbContext.SaveChangesAsync();
         }
+        public async Task AddToFavoritesAsync(int clubId, string userId)
+        {
+            Club? club = await dbContext.Clubs.FindAsync(clubId);
+            UserClub userClub = new UserClub()
+            {
+                ClubId = club!.Id,
+                UserId = userId
+            };
+
+            await dbContext.FavoriteClubs.AddAsync(userClub);
+            dbContext.SaveChanges();
+        }
     }
 }

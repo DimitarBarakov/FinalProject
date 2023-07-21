@@ -68,15 +68,15 @@ namespace FootballApp.Controllers
             var club = await clubService.GetClubByIdAsync(id);
             if (club == null)
             {
-                return BadRequest("Club with this Id does not exists!");
+                return NotFound("Club with this Id does not exists!");
             }
             if (await userClubService.DoesUserClubExistsAsync(id, userId))
             {
-                TempData[ErrorMessage] = "This club is already added to your favorites";
+                TempData[ErrorMessage] = $"{club.Name} is already added to your favorites";
                 return RedirectToAction("ClubById", "Club", new {id});
             }
             TempData[SuccessMessage] = $"You added {club.Name} to your favorites";
-            await clubService.AddToFavoritesAsync(id, userId);
+            await userClubService.AddToFavoritesAsync(id, userId);
             return RedirectToAction("FavoriteClubs");
         }
         [Authorize]
@@ -128,8 +128,18 @@ namespace FootballApp.Controllers
             return RedirectToAction("ClubById", "Club", new { id });
         }
 
+        [Authorize]
         public async Task<IActionResult> RemoveFromFavorites(int id)
         {
+            try
+            {
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             await userClubService.RemoveFromFavorites(id,userId);
             TempData[SuccessMessage] = $"Successfully removed club from favorites";

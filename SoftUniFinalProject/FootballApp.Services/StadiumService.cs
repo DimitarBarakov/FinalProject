@@ -16,6 +16,24 @@ namespace FootballApp.Services
             dbContext = context;
         }
 
+        public async Task<int> AddStadiumAndReturnIdAsync(StadiumFormViewModel model)
+        {
+            Stadium stadiumToAdd = new Stadium()
+            {
+                Location = model.Location,
+                City = model.City,
+                Country = model.Country,
+                Address = model.Address,
+                Name = model.Name,
+                Capacity = model.Capacity
+            };
+
+            await dbContext.AddAsync(stadiumToAdd);
+            await dbContext.SaveChangesAsync();
+
+            return stadiumToAdd.Id;
+        }
+
         public async Task EditStadiumAsync(int stadiumId, StadiumFormViewModel model)
         {
             Stadium stadiumToEdit = await GetStadiumByIdAsync(stadiumId);
@@ -25,6 +43,7 @@ namespace FootballApp.Services
             stadiumToEdit.Country = model.Country;
             stadiumToEdit.Address = model.Address;
             stadiumToEdit.Name = model.Name;
+            stadiumToEdit.Capacity = model.Capacity;
 
             await dbContext.SaveChangesAsync();
 
@@ -39,6 +58,11 @@ namespace FootballApp.Services
         {
             Stadium stadium = await GetStadiumByIdAsync(stadiumId);
 
+            if (stadium == null)
+            {
+                return null;
+            }
+
             StadiumPageViewModel model = new StadiumPageViewModel()
             {
                 Id = stadium.Id,
@@ -46,7 +70,8 @@ namespace FootballApp.Services
                 Name = stadium.Name,
                 City = stadium.City,
                 Adrress = stadium.Address,
-                Country = stadium.Country
+                Country = stadium.Country,
+                Capacity = stadium.Capacity
             };
 
             return model;

@@ -12,5 +12,7 @@
         public string Adrress { get; set; } = null!;
 
         public string City { get; set; } = null!;
+
+        public int Capacity { get; set; }
     }
 }
