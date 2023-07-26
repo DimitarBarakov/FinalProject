@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApp.Common", "Footb
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{06F82BE4-DF75-4787-9568-903785EF2458}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballApp.Services", "FootballApp.Services\FootballApp.Services.csproj", "{9C5E97BB-8D0F-4E69-A3C9-F532D6D2302A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballApp.Services", "FootballApp.Services\FootballApp.Services.csproj", "{9C5E97BB-8D0F-4E69-A3C9-F532D6D2302A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballApp.Infrastructure", "FootballApp.Infrastructure\FootballApp.Infrastructure.csproj", "{6382D577-C963-4DA9-A464-5742E492DD47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{9C5E97BB-8D0F-4E69-A3C9-F532D6D2302A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C5E97BB-8D0F-4E69-A3C9-F532D6D2302A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C5E97BB-8D0F-4E69-A3C9-F532D6D2302A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6382D577-C963-4DA9-A464-5742E492DD47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6382D577-C963-4DA9-A464-5742E492DD47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6382D577-C963-4DA9-A464-5742E492DD47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6382D577-C963-4DA9-A464-5742E492DD47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{1D6403D6-FE0C-4560-9E1B-D91781D97761} = {21991EE0-A2D7-44B3-9E2A-0D8020B789C6}
 		{67DA660D-0D2A-4212-835B-947D5CB35DA3} = {34912393-DCE9-4299-971F-4DBF170FED4E}
 		{9C5E97BB-8D0F-4E69-A3C9-F532D6D2302A} = {06F82BE4-DF75-4787-9568-903785EF2458}
+		{6382D577-C963-4DA9-A464-5742E492DD47} = {21991EE0-A2D7-44B3-9E2A-0D8020B789C6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DBE53134-5A1A-4575-A2AA-D0A5926CAC6F}

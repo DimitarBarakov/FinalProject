@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Configuration;
 using System.Security.Claims;
 using static FootballApp.Common.NotificationMessagesConstants;
+using static FootballApp.Common.GeneralConstants;
 
 namespace FootballApp.Controllers
 {
@@ -23,8 +24,8 @@ namespace FootballApp.Controllers
             this.stadiumService = sservice;
             this.leagueService = leagueService;
         }
-        //TODO: Only for admins
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddClub(int id)
         {
             var model = new FormClubViewModel();
@@ -34,8 +35,8 @@ namespace FootballApp.Controllers
             return View(model);
         }
 
-        //TODO: Only for admins
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddClub(int id, FormClubViewModel model)
         {
             model.League = await leagueService.GetAddClubLeagueViewModelAsync(id);
@@ -88,8 +89,8 @@ namespace FootballApp.Controllers
             return View(model);
         }
 
-        //TODO: Only for admins
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditClub(int id)
         {
             Club clubToEdit = await clubService.GetClubAsync(id);
@@ -117,6 +118,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditClub(int id, FormClubViewModel model)
         {
             if (!ModelState.IsValid)

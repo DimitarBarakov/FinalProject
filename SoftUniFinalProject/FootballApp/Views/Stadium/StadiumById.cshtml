@@ -20,8 +20,11 @@
         <iframe src="@Model.Location" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </div>
+@if (this.User.IsAdmin())
+{
+    <div class="container button-add" style="margin-bottom:120px">
+        <a asp-controller="Stadium" asp-action="EditStadium" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Stadium</a>
+    </div>
+}
 
-<div class="container button-add" style="margin-bottom:120px">
-    <a asp-controller="Stadium" asp-action="EditStadium" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Stadium</a>
-</div>
 

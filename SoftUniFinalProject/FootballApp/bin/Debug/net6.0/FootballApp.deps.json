@@ -9,6 +9,7 @@
       "FootballApp/1.0.0": {
         "dependencies": {
           "FootballApp.Data": "1.0.0",
+          "FootballApp.Infrastructure": "1.0.0",
           "FootballApp.Services": "1.0.0",
           "FootballApp.ViewModels": "1.0.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.15",
@@ -2599,6 +2600,14 @@
           "FootballApp.Data.Models.dll": {}
         }
       },
+      "FootballApp.Infrastructure/1.0.0": {
+        "dependencies": {
+          "FootballApp.Common": "1.0.0"
+        },
+        "runtime": {
+          "FootballApp.Infrastructure.dll": {}
+        }
+      },
       "FootballApp.Services/1.0.0": {
         "dependencies": {
           "FootballApp.Data": "1.0.0",
@@ -4203,6 +4212,11 @@
       "sha512": ""
     },
     "FootballApp.Data.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FootballApp.Infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

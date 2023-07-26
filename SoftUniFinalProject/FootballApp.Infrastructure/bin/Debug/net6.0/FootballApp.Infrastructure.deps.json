@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FootballApp.Infrastructure/1.0.0": {
+        "dependencies": {
+          "FootballApp.Common": "1.0.0"
+        },
+        "runtime": {
+          "FootballApp.Infrastructure.dll": {}
+        }
+      },
+      "FootballApp.Common/1.0.0": {
+        "runtime": {
+          "FootballApp.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FootballApp.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FootballApp.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

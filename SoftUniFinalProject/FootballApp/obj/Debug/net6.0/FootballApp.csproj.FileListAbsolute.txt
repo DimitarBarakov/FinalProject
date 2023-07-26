@@ -266,3 +266,5 @@ E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\b
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Infrastructure.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp\bin\Debug\net6.0\FootballApp.Infrastructure.pdb

@@ -73,11 +73,15 @@
 <div id="fixturesTable" style="display:none">
     <partial name="_FixturesPartialView" model="@Model.Fixtures" />
 </div>
-<div class="container button-add">
-    <a asp-controller="Club" asp-action="AddClub" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Club</a>
-</div>
+@if (this.User.IsAdmin())
+{
+    <div class="container button-add">
+        <a asp-controller="Club" asp-action="AddClub" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Club</a>
+    </div>
 
-<div class="container button-add " style="margin-bottom:120px">
-    <a asp-controller="League" asp-action="EditLeague" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit</a>
-</div>
+    <div class="container button-add " style="margin-bottom:120px">
+        <a asp-controller="League" asp-action="EditLeague" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit</a>
+    </div>
+}
+
 <script src="~/js/LeagueByIdJS.js"></script>

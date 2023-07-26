@@ -1,7 +1,11 @@
 ﻿using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Player;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static FootballApp.Common.GeneralConstants;
+
+using System.Data;
 
 namespace FootballApp.Controllers
 {
@@ -29,6 +33,7 @@ namespace FootballApp.Controllers
             return View(model);
         }
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public IActionResult AddPlayer()
         {
             FormPlayerViewModel model = new FormPlayerViewModel();
@@ -37,6 +42,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddPlayer(int id, FormPlayerViewModel model)
         {
             model.ClubId = id;
@@ -50,6 +56,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditPlayer(int id)
         {
             Player? playerToEdit = await playerService.GetPlayerAsync(id);
@@ -72,6 +79,7 @@ namespace FootballApp.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditPlayer(int id, FormPlayerViewModel model)
         {
             //model.ClubId = id;

@@ -26,6 +26,7 @@ namespace FootballApp
             builder.Services.AddScoped<IStadiumService, StadiumService>();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<FootballAppDbContext>();
 
             builder.Services.Configure<IdentityOptions>(options =>

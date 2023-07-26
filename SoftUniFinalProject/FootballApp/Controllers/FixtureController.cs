@@ -1,7 +1,10 @@
 ﻿using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Fixture;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static FootballApp.Common.GeneralConstants;
+using System.Data;
 
 namespace FootballApp.Controllers
 {
@@ -27,11 +30,11 @@ namespace FootballApp.Controllers
         public async Task<IActionResult> FixtureById(int id)
         {
             AllFixturesViewModel model = await fixtureService.GetFixtureViewModelByIdAsync(id);
-
             return View(model);
         }
 
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddFixture()
         { 
             FixtureAddViewModel model = new FixtureAddViewModel();
@@ -41,6 +44,7 @@ namespace FootballApp.Controllers
             return View(model);
         }
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddFixture(FixtureAddViewModel model)
         {
             Club homeClub = await clubService.GetClubAsync(model.HomeClubId);

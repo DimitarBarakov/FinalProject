@@ -1,8 +1,11 @@
 ﻿using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.League;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static FootballApp.Common.GeneralConstants;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Data;
 
 namespace FootballApp.Controllers
 {
@@ -26,20 +29,18 @@ namespace FootballApp.Controllers
         {
             bool doesLeagueExists = await leagueService.DoesLeagueExistsByIdAsync(id);
 
-
-            //TODO: Add error page
             if (!doesLeagueExists)
             {
                 return BadRequest();
             }
 
             var model = await leagueService.GetLeagueByIdAsync(id);
-
             return View(model);
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddLeague()
+        [Authorize(Roles = AdminRoleName)]
+        public IActionResult AddLeague()
         {
             FormLeagueViewModel model = new FormLeagueViewModel();
 
@@ -47,6 +48,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddLeague(FormLeagueViewModel model)
         {
             if (!ModelState.IsValid)
@@ -59,6 +61,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditLeague(int id)
         {
             League league = await leagueService.GetLeagueAsync(id);
@@ -72,6 +75,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditLeague(int id, FormLeagueViewModel model)
         {
             if (!ModelState.IsValid)

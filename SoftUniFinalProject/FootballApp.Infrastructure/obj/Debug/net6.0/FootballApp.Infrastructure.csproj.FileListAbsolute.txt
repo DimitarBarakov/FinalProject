@@ -1,0 +1,15 @@
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\bin\Debug\net6.0\FootballApp.Infrastructure.deps.json
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\bin\Debug\net6.0\FootballApp.Infrastructure.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\bin\Debug\net6.0\FootballApp.Infrastructure.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\bin\Debug\net6.0\FootballApp.Common.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\bin\Debug\net6.0\FootballApp.Common.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.csproj.AssemblyReference.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.AssemblyInfoInputs.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.AssemblyInfo.cs
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.csproj.CoreCompileInputs.cache
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.csproj.CopyComplete
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\refint\FootballApp.Infrastructure.dll
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\FootballApp.Infrastructure.pdb
+E:\WORKSPACE\SoftUni\FinalProject\FinalProject\SoftUniFinalProject\FootballApp.Infrastructure\obj\Debug\net6.0\ref\FootballApp.Infrastructure.dll

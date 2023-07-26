@@ -1,7 +1,9 @@
 ﻿using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Stadium;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using static FootballApp.Common.GeneralConstants;
 
 namespace FootballApp.Controllers
 {
@@ -25,8 +27,8 @@ namespace FootballApp.Controllers
 
             return View(model);
         }
-        //Only for admin
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditStadium(int id)
         {
             Stadium stadium = await stadiumService.GetStadiumByIdAsync(id);
@@ -48,6 +50,7 @@ namespace FootballApp.Controllers
         }
         //Only for admin
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditStadium(int id, StadiumFormViewModel model)
         {
             if (!ModelState.IsValid)
@@ -60,6 +63,7 @@ namespace FootballApp.Controllers
         }
         //Only for admin
         [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
         public IActionResult AddStadium()
         {
             StadiumFormViewModel model = new StadiumFormViewModel();
@@ -67,6 +71,7 @@ namespace FootballApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> AddStadium(StadiumFormViewModel model)
         {
             if (!ModelState.IsValid)
