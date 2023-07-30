@@ -49,12 +49,13 @@ namespace FootballApp.Services
 
         }
 
-        public async Task<Stadium> GetStadiumByIdAsync(int stadiumId)
+        public async Task<Stadium?> GetStadiumByIdAsync(int stadiumId)
         {
-            return await dbContext.Stadiums.FindAsync(stadiumId);
+            Stadium stadium = await dbContext.Stadiums.FindAsync(stadiumId);
+            return stadium;
         }
 
-        public async Task<StadiumPageViewModel> GetStadiumPageViewModelByIdAsync(int stadiumId)
+        public async Task<StadiumPageViewModel?> GetStadiumPageViewModelByIdAsync(int stadiumId)
         {
             Stadium stadium = await GetStadiumByIdAsync(stadiumId);
 

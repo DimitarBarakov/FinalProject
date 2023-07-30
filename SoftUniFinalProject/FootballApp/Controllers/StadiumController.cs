@@ -35,7 +35,7 @@ namespace FootballApp.Controllers
 
             if (stadium == null)
             {
-                return NotFound("A stadium with the provided id does not exists");
+                return NotFound();
             }
 
             StadiumFormViewModel model = new StadiumFormViewModel();
