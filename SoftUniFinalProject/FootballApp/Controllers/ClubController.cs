@@ -133,20 +133,20 @@ namespace FootballApp.Controllers
         [Authorize]
         public async Task<IActionResult> RemoveFromFavorites(int id)
         {
-            try
-            {
-
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             await userClubService.RemoveFromFavorites(id,userId);
             TempData[SuccessMessage] = $"Successfully removed club from favorites";
 
             return RedirectToAction("FavoriteClubs");
+        }
+
+        [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> DeleteClub(int id)
+        {
+            int leagueId = await clubService.DeleteClubAndReturnLeagueIdAsync(id);
+
+            return RedirectToAction("ShowById", "League", new { leagueId });
         }
     }
 }

@@ -3,7 +3,6 @@ using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Player;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics.Metrics;
 
 namespace FootballApp.Services
 {
@@ -18,6 +17,7 @@ namespace FootballApp.Services
         public async Task<PlayerPageViewModel?> GetPlayerByIdAsync(int playerId)
         {
             Player? player = await dbContext.Players
+                .Where(p=>p.IsActive)
                 .Include(p => p.Club)
                 .FirstOrDefaultAsync(p => p.Id == playerId);
 
@@ -43,7 +43,7 @@ namespace FootballApp.Services
         }
         public async Task<bool> DoesPlayerExistsByIdAsync(int playerId)
         {
-            bool doesPlayerExists = await dbContext.Players.AnyAsync(p => p.Id == playerId);
+            bool doesPlayerExists = await dbContext.Players.AnyAsync(p => p.Id == playerId && p.IsActive);
 
             return doesPlayerExists;
         }
@@ -69,9 +69,9 @@ namespace FootballApp.Services
             await dbContext.SaveChangesAsync();
         }
 
-        public async Task<Player?> GetPlayerAsync(int playerId)
+        public async Task<Player> GetPlayerAsync(int playerId)
         {
-            Player? player = await dbContext.Players.FindAsync(playerId);
+            Player? player = await dbContext.Players.Where(p=>p.IsActive).FirstOrDefaultAsync(p=>p.Id == playerId);
 
             return player;
         }
@@ -89,6 +89,15 @@ namespace FootballApp.Services
             edittedPlayer.Country = model.Country;
             edittedPlayer.Position = model.Position;
             edittedPlayer.Picture = model.Picture;
+
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task DeletePlayerAsync(int playerId)
+        {
+            Player playerToDelete = await GetPlayerAsync(playerId);
+
+            playerToDelete.IsActive = false;
 
             await dbContext.SaveChangesAsync();
         }

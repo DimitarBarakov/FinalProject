@@ -19,5 +19,7 @@ namespace FootballApp.Services.Interfaces
         public Task<Club> GetClubAsync(int clubId);
 
         public Task<List<AddFixtureClubViewModel>> GetAddFixtureClubViewModelsAsync();
+
+        public Task<int> DeleteClubAndReturnLeagueIdAsync(int clubId);
     }
 }

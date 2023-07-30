@@ -3,7 +3,6 @@ using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Storage;
 
 namespace FootballApp.Services
 {
@@ -33,6 +32,7 @@ namespace FootballApp.Services
         public async Task<List<AllFixturesViewModel>> GetAllFixturesAsync()
         {
             var fixtures = await dbContext.Fixtures
+                .Where(f => f.IsActive)
                 .Include(f => f.HomeClub)
                 .Include(f => f.AwayClub)
                 .OrderBy(f=>f.StartTime)
@@ -60,6 +60,7 @@ namespace FootballApp.Services
         public async Task<Fixture> GetFixtureAsync(int fixtureId)
         {
             Fixture? fixture = await dbContext.Fixtures
+                .Where(f=>f.IsActive)
                 .Include(f => f.HomeClub)
                 .ThenInclude(c=>c.Stadium)
                 .Include(f => f.AwayClub)
@@ -95,6 +96,15 @@ namespace FootballApp.Services
             };
 
             return viewModel;
+        }
+
+        public async Task DeleteFixtureAsync(int fixtureId)
+        {
+            Fixture fixtureToDelete = await GetFixtureAsync(fixtureId);
+
+            fixtureToDelete.IsActive = false;
+
+            await dbContext.SaveChangesAsync();
         }
     }
 }

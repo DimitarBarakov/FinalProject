@@ -4,6 +4,7 @@ using FootballApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FootballApp.Data.Migrations
 {
     [DbContext(typeof(FootballAppDbContext))]
-    partial class FootballAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230730145751_SetDefaultValueTrueToIsActivePropertyInAnyEntity")]
+    partial class SetDefaultValueTrueToIsActivePropertyInAnyEntity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

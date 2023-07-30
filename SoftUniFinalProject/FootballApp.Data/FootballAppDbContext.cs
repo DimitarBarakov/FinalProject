@@ -36,6 +36,26 @@ namespace FootballApp.Data
                 .HasForeignKey(f => f.HomeClubId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            builder.Entity<Stadium>()
+                .Property(c => c.IsActive)
+                .HasDefaultValue(true);
+
+            builder.Entity<Fixture>()
+                .Property(c => c.IsActive)
+                .HasDefaultValue(true);
+
+            builder.Entity<Player>()
+                .Property(c => c.IsActive)
+                .HasDefaultValue(true);
+
+            builder.Entity<Club>()
+                .Property(c => c.IsActive)
+                .HasDefaultValue(true);
+
+            builder.Entity<League>()
+                .Property(c => c.IsActive)
+                .HasDefaultValue(true);
+
             base.OnModelCreating(builder);
         }
     }

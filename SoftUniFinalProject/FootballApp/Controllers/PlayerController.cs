@@ -91,5 +91,14 @@ namespace FootballApp.Controllers
             await playerService.EditPlayerAsync(id, model);
             return RedirectToAction("ShowPlayerById", "Player", new { id });
         }
+
+        [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> DeletePlayer(int id, FormPlayerViewModel model)
+        {
+            await playerService.DeletePlayerAsync(id);
+
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

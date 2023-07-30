@@ -4,7 +4,6 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
 
 namespace FootballApp.Services
 {
@@ -29,6 +28,7 @@ namespace FootballApp.Services
                 .FirstOrDefaultAsync(c=>c.Id == clubId);
 
             List<AllFixturesViewModel> awayFixtures = club!.AwayFixtures
+                .Where(af=>af.IsActive)
                 .Select(f => new AllFixturesViewModel()
                 {
                     Id = f.Id,
@@ -60,6 +60,7 @@ namespace FootballApp.Services
                     Name = club.Stadium.Name
                 },
                 Players = club.Players
+                .Where(p=>p.IsActive)
                 .Select(p => new ClubPagePlayerViewModel()
                 {
                     Id = p.Id,
@@ -69,6 +70,7 @@ namespace FootballApp.Services
                 })
                 .ToList(),
                 Fixtures = club.HomeFixtures
+                .Where(hf => hf.IsActive)
                 .Select(f => new AllFixturesViewModel()
                 {
                     Id = f.Id,
@@ -97,7 +99,7 @@ namespace FootballApp.Services
 
         public async Task<bool> DoesClubExistsByIdAsync(int clubId)
         {
-            bool result = await dbContext.Clubs.AnyAsync(c => c.Id == clubId);
+            bool result = await dbContext.Clubs.AnyAsync(c => c.Id == clubId && c.IsActive);
 
             return result;
         }
@@ -145,15 +147,21 @@ namespace FootballApp.Services
 
         public async Task<Club> GetClubAsync(int clubId)
         {
-            Club? club = await dbContext.Clubs.FindAsync(clubId);
+            Club? club = await dbContext.Clubs
+                .Where(c=>c.IsActive)
+                .Include(c=>c.Players)
+                .Include(c=>c.AwayFixtures)
+                .Include(c=>c.HomeFixtures)
+                .FirstOrDefaultAsync(c=>c.Id == clubId);
 
             return club!;
         }
 
         public async Task<List<AddFixtureClubViewModel>> GetAddFixtureClubViewModelsAsync()
         {
-            List<AddFixtureClubViewModel> models = await dbContext.Clubs.
-                Select(c => new AddFixtureClubViewModel()
+            List<AddFixtureClubViewModel> models = await dbContext.Clubs
+                .Where(c=>c.IsActive)
+                .Select(c => new AddFixtureClubViewModel()
                 {
                     Id = c.Id,
                     Name = c.Name,
@@ -162,6 +170,18 @@ namespace FootballApp.Services
                 .ToListAsync();
 
             return models;
+        }
+
+        public async Task<int> DeleteClubAndReturnLeagueIdAsync(int clubId)
+        {
+            Club clubToDelete = await GetClubAsync(clubId);
+
+            clubToDelete.IsActive = false;
+            clubToDelete.Players.Select(p => p.IsActive = false).ToList();
+            clubToDelete.AwayFixtures.Select(af => af.IsActive = false).ToList();
+            clubToDelete.HomeFixtures.Select(hf => hf.IsActive = false).ToList();
+
+            return clubToDelete.LeagueId;
         }
     }
 }

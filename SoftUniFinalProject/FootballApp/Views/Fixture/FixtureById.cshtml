@@ -20,4 +20,12 @@
     <div class="row">
         <a asp-controller="Stadium" asp-action="StadiumById" asp-route-id="@Model.Stadium.Id" style="text-decoration:none" class="link-dark"><div class="col-md-12 aligner">@Model.Stadium.Name</div></a>
     </div>
+    @if (this.User.IsAdmin())
+    {
+        <div class="row" style="text-align:center; margin-top:5px">
+            <form asp-controller="Fixture" asp-action="DeleteFixture" asp-route-id="@Model.Id">
+                <input type="submit" value="Delete" class="btn btn-danger btn-lg float-right" />
+            </form>
+        </div>
+    }
 </div>

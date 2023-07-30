@@ -12,5 +12,7 @@ namespace FootballApp.Services.Interfaces
         public Task AddPlayerAsync(int id, FormPlayerViewModel model);
 
         public Task EditPlayerAsync(int id, FormPlayerViewModel model);
+
+        public Task DeletePlayerAsync(int playerId);
     }
 }

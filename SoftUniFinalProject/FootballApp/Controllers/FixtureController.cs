@@ -73,5 +73,13 @@ namespace FootballApp.Controllers
             await fixtureService.AddFixtureAsync(model);
             return RedirectToAction("All");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteFixture(int id)
+        {
+            await fixtureService.DeleteFixtureAsync(id);
+
+            return RedirectToAction("All");
+        }
     }
 }
