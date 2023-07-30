@@ -29,6 +29,8 @@ namespace FootballApp.Data.Models
         [Required]
         public virtual Club AwayClub { get; set; } = null!;
 
+        public bool IsActive { get; set; }
+
         [Required]
         public int LeagueId { get; set; }
 

@@ -19,6 +19,7 @@ namespace FootballApp.Services
         public async Task<ClubPageViewModel?> GetClubByIdAsync(int clubId)
         {
             Club? club = await dbContext.Clubs
+                .Where(c=>c.IsActive)
                 .Include(c=>c.HomeFixtures)
                 .ThenInclude(f=>f.AwayClub)
                 .Include(c=>c.AwayFixtures)

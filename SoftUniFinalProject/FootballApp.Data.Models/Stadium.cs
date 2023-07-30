@@ -30,6 +30,8 @@ namespace FootballApp.Data.Models
         [Required]
         public int Capacity { get; set; }
 
+        public bool IsActive { get; set; }
+
         public virtual List<Club> Clubs { get; set; } = new List<Club>();
     }
 }

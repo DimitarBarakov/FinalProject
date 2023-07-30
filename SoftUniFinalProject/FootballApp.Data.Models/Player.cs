@@ -44,6 +44,8 @@ namespace FootballApp.Data.Models
         [Required]
         public int MatchesPlayed { get; set; }
 
+        public bool IsActive { get; set; }
+
         [Required]
         [ForeignKey(nameof(Club))]
         public int ClubId { get; set; }

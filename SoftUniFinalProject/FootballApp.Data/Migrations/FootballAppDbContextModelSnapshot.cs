@@ -36,6 +36,9 @@ namespace FootballApp.Data.Migrations
                     b.Property<int>("Draws")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LeagueId")
                         .HasColumnType("int");
 
@@ -95,6 +98,9 @@ namespace FootballApp.Data.Migrations
                     b.Property<int>("HomeClubId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LeagueId")
                         .HasColumnType("int");
 
@@ -124,6 +130,9 @@ namespace FootballApp.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Logo")
                         .IsRequired()
@@ -169,6 +178,9 @@ namespace FootballApp.Data.Migrations
 
                     b.Property<int>("Goals")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -246,6 +258,9 @@ namespace FootballApp.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Location")
                         .IsRequired()

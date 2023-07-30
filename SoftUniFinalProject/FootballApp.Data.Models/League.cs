@@ -20,6 +20,8 @@ namespace FootballApp.Data.Models
         [MaxLength(LogoMaxLength)]
         public string Logo { get; set; } = null!;
 
+        public bool IsActive { get; set; }
+
         public virtual List<Club> Clubs { get; set; } = new List<Club>();
 
         public virtual List<Fixture> Fixtures { get; set; } = new List<Fixture>();

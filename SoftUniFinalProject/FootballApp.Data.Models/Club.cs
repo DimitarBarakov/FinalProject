@@ -48,6 +48,8 @@ namespace FootballApp.Data.Models
 
         public int GoalDifference => this.ScoredGoals - this.ConcededGoals;
 
+        public bool IsActive { get; set; }
+
         [Required]
         [ForeignKey(nameof(League))]
         public int LeagueId { get; set; }
