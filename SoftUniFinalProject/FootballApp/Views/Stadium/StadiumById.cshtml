@@ -25,6 +25,11 @@
     <div class="container button-add" style="margin-bottom:120px">
         <a asp-controller="Stadium" asp-action="EditStadium" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Stadium</a>
     </div>
+    <div class="row" style="text-align:center; margin-top:5px">
+        <form asp-controller="Stadium" asp-action="DeleteStadium" asp-route-id="@Model.Id">
+            <input type="submit" value="Delete" class="btn btn-danger btn-lg float-right" />
+        </form>
+    </div>
 }
 
 

@@ -11,10 +11,12 @@ namespace FootballApp.Services
     public class LeagueService : ILeagueService
     {
         private readonly FootballAppDbContext dbContext;
+        private readonly IClubService clubService;
 
-        public LeagueService(FootballAppDbContext context)
+        public LeagueService(FootballAppDbContext context, IClubService cService)
         {
             this.dbContext = context;
+            clubService = cService;
         }
 
         public async Task AddLeagueAsync(FormLeagueViewModel model)
@@ -32,7 +34,7 @@ namespace FootballApp.Services
 
         public async Task<bool> DoesLeagueExistsByIdAsync(int leagueId)
         {
-            bool res = await dbContext.Leagues.AnyAsync(l => l.Id == leagueId);
+            bool res = await dbContext.Leagues.AnyAsync(l => l.Id == leagueId && l.IsActive);
 
             return res;
         }
@@ -51,7 +53,7 @@ namespace FootballApp.Services
         public async Task<ClubAddLeagueViewModel> GetAddClubLeagueViewModelAsync(int leagueId)
         {
             ClubAddLeagueViewModel? league = await dbContext.Leagues
-                .Where(l => l.Id == leagueId)
+                .Where(l => l.Id == leagueId && l.IsActive)
                 .Select(l => new ClubAddLeagueViewModel()
                 {
                     Id = l.Id,
@@ -65,6 +67,7 @@ namespace FootballApp.Services
         public async Task<List<AllLeaguesViewModel>> GetAllLeaguesAsync()
         {
             List<AllLeaguesViewModel> leagues = await dbContext.Leagues
+                .Where(l=>l.IsActive)
                 .Select(l => new AllLeaguesViewModel()
                 {
                     Id = l.Id,
@@ -78,15 +81,19 @@ namespace FootballApp.Services
 
         public async Task<League> GetLeagueAsync(int leagueId)
         {
-            return await dbContext.Leagues.FindAsync(leagueId);
+            return await dbContext.Leagues
+                .Where(l => l.IsActive)
+                .Include(l=>l.Clubs)
+                .FirstOrDefaultAsync(l => l.Id == leagueId);
         }
 
         public async Task<LeaguePageViewModel> GetLeagueByIdAsync(int leagueId)
         {
             var league = await dbContext.Leagues
-                .Include(l=>l.Clubs)
-                .Include(l=>l.Fixtures)
-                .FirstAsync(l=>l.Id == leagueId);
+                .Where(l=>l.IsActive)
+                .Include(l => l.Clubs)
+                .Include(l => l.Fixtures)
+                .FirstOrDefaultAsync(l => l.Id == leagueId);
 
             var model = new LeaguePageViewModel()
             {
@@ -95,6 +102,7 @@ namespace FootballApp.Services
                 Country = league.Country,
                 Logo = league.Logo,
                 Clubs = league.Clubs
+                .Where(c=>c.IsActive)
                 .Select(c => new LeagueClubViewModel()
                 {
                     Id = c.Id,
@@ -107,10 +115,11 @@ namespace FootballApp.Services
                     Loses = c.Loses,
                     MathesPlayed = c.MatchesPlayed
                 })
-                .OrderByDescending(c=>c.Points)
+                .OrderByDescending(c => c.Points)
                 .ToList(),
                 Fixtures = league.Fixtures
-                .Select(f=> new AllFixturesViewModel() 
+                .Where(f=>f.IsActive)
+                .Select(f => new AllFixturesViewModel()
                 {
                     Id = f.Id,
                     StartTime = f.StartTime.ToString(),
@@ -132,8 +141,9 @@ namespace FootballApp.Services
         }
         public async Task<List<AddFixtureLeagueViewModel>> GetAddFixtureLeagueViewModelsAsync()
         {
-            List<AddFixtureLeagueViewModel> models = await dbContext.Leagues.
-                Select(c => new AddFixtureLeagueViewModel()
+            List<AddFixtureLeagueViewModel> models = await dbContext.Leagues
+                .Where(l=>l.IsActive)
+                .Select(c => new AddFixtureLeagueViewModel()
                 {
                     Id = c.Id,
                     Name = c.Name
@@ -143,5 +153,17 @@ namespace FootballApp.Services
             return models;
         }
 
+        public async Task DeleteLeagueAsync(int leagueId)
+        {
+            League leagueToDelete = await GetLeagueAsync(leagueId);
+
+            leagueToDelete.IsActive = false;
+            foreach (var club in leagueToDelete.Clubs)
+            {
+                await clubService.DeleteClubAndReturnLeagueIdAsync(club.Id);   
+            }
+
+            await dbContext.SaveChangesAsync();
+        }
     }
 }

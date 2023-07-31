@@ -34,6 +34,15 @@ namespace FootballApp.Services
             return stadiumToAdd.Id;
         }
 
+        public async Task DeleteStadiumAsync(int stadiumId)
+        {
+            Stadium stadiumToDelete = await GetStadiumByIdAsync(stadiumId);
+
+            stadiumToDelete.IsActive = false;
+
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task EditStadiumAsync(int stadiumId, StadiumFormViewModel model)
         {
             Stadium stadiumToEdit = await GetStadiumByIdAsync(stadiumId);
@@ -49,9 +58,11 @@ namespace FootballApp.Services
 
         }
 
-        public async Task<Stadium?> GetStadiumByIdAsync(int stadiumId)
+        public async Task<Stadium> GetStadiumByIdAsync(int stadiumId)
         {
-            Stadium stadium = await dbContext.Stadiums.FindAsync(stadiumId);
+            Stadium stadium = await dbContext.Stadiums.Where(s=>s.IsActive)
+                .Include(s=>s.Clubs)
+                .FirstOrDefaultAsync(s=>s.Id == stadiumId);
             return stadium;
         }
 
@@ -81,6 +92,7 @@ namespace FootballApp.Services
         public async Task<List<AddClubStadiumViewModel>> GetStadiumsForAddClubViewModelAsync()
         {
             List<AddClubStadiumViewModel> stadiums = await dbContext.Stadiums
+                .Where(s=>s.IsActive)
                 .Select(s => new AddClubStadiumViewModel()
                 {
                     Id = s.Id,

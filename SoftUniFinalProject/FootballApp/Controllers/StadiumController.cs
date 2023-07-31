@@ -4,6 +4,7 @@ using FootballApp.ViewModels.Stadium;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static FootballApp.Common.GeneralConstants;
+using static FootballApp.Common.NotificationMessagesConstants;
 
 namespace FootballApp.Controllers
 {
@@ -81,6 +82,23 @@ namespace FootballApp.Controllers
 
             int id = await stadiumService.AddStadiumAndReturnIdAsync(model);
             return RedirectToAction("StadiumById", "Stadium", new { id });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> DeleteStadium(int id)
+        {
+            Stadium stadium = await stadiumService.GetStadiumByIdAsync(id);
+
+            if (stadium.Clubs.Any())
+            {
+                TempData[ErrorMessage] = "A team is playing on that stadium and it can not be deleted!";
+
+                return RedirectToAction("StadiumById", new { id });
+            }
+
+            await stadiumService.DeleteStadiumAsync(id);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

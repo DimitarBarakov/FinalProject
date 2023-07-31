@@ -15,5 +15,7 @@ namespace FootballApp.Services.Interfaces
         public Task EditStadiumAsync(int stadiumId, StadiumFormViewModel model);
 
         public Task<int> AddStadiumAndReturnIdAsync(StadiumFormViewModel model);
+
+        public Task DeleteStadiumAsync(int stadiumId);
     }
 }

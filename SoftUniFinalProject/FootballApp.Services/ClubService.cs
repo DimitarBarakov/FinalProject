@@ -181,6 +181,8 @@ namespace FootballApp.Services
             clubToDelete.AwayFixtures.Select(af => af.IsActive = false).ToList();
             clubToDelete.HomeFixtures.Select(hf => hf.IsActive = false).ToList();
 
+            await dbContext.SaveChangesAsync();
+
             return clubToDelete.LeagueId;
         }
     }

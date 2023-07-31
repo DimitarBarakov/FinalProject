@@ -4,8 +4,6 @@ using FootballApp.ViewModels.League;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static FootballApp.Common.GeneralConstants;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-using System.Data;
 
 namespace FootballApp.Controllers
 {
@@ -85,6 +83,15 @@ namespace FootballApp.Controllers
 
             await leagueService.EditLeagueAsync(id, model);
             return RedirectToAction("ShowById", "League", new {id});
+        }
+
+        [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> DeleteLeague(int id)
+        {
+            await leagueService.DeleteLeagueAsync(id);
+
+            return RedirectToAction("All");
         }
     }
 }

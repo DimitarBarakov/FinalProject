@@ -23,5 +23,7 @@ namespace FootballApp.Services.Interfaces
         public Task EditLeagueAsync(int leagueId, FormLeagueViewModel model);
 
         public Task<List<AddFixtureLeagueViewModel>> GetAddFixtureLeagueViewModelsAsync();
+
+        public Task DeleteLeagueAsync(int leagueId);
     }
 }

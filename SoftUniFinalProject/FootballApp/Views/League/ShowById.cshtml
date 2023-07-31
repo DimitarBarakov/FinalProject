@@ -82,6 +82,11 @@
     <div class="container button-add " style="margin-bottom:120px">
         <a asp-controller="League" asp-action="EditLeague" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit</a>
     </div>
+    <div class="row" style="text-align:center; margin-top:5px">
+        <form asp-controller="League" asp-action="DeleteLeague" asp-route-id="@Model.Id">
+            <input type="submit" value="Delete" class="btn btn-danger btn-lg float-right" />
+        </form>
+    </div>
 }
 
 <script src="~/js/LeagueByIdJS.js"></script>
