@@ -26,10 +26,10 @@
 
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a id="showPlayers" class="nav-link link-dark" href="#">Players</a>
+            <p id="showPlayers" class="nav-link link-dark" >Players</p>
         </li>
         <li class="nav-item">
-            <a id="showFixtures" class="nav-link link-dark" href="#">Fixtures</a>
+            <p id="showFixtures" class="nav-link link-dark" >Fixtures</p>
         </li>
     </ul>
 </nav>
@@ -62,11 +62,10 @@
     <div class="container button-add">
         <a asp-controller="Player" asp-action="AddPlayer" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Add Player</a>
     </div>
-
-    <div class="container button-add" style="margin-bottom:120px">
+    <div class="container button-add" style="margin-bottom:20px">
         <a asp-controller="Club" asp-action="EditClub" asp-route-id="@Model.Id" class="btn btn-danger btn-lg float-right">Edit Club</a>
     </div>
-    <div class="row" style="text-align:center; margin-top:5px">
+    <div class="row" style="margin-top:5px;">
         <form asp-controller="Club" asp-action="DeleteClub" asp-route-id="@Model.Id">
             <input type="submit" value="Delete" class="btn btn-danger btn-lg float-right" />
         </form>

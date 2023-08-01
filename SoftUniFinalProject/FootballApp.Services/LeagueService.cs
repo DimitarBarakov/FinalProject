@@ -116,6 +116,7 @@ namespace FootballApp.Services
                     MathesPlayed = c.MatchesPlayed
                 })
                 .OrderByDescending(c => c.Points)
+                .ThenByDescending(c=>c.GoalDifferrence)
                 .ToList(),
                 Fixtures = league.Fixtures
                 .Where(f=>f.IsActive)
