@@ -14,7 +14,7 @@ namespace FootballApp.Services
         {
             dbContext = context;
         }
-        public async Task<PlayerPageViewModel?> GetPlayerByIdAsync(int playerId)
+        public async Task<PlayerPageViewModel?> GetPlayerPageViewModelByIdAsync(int playerId)
         {
             Player? player = await dbContext.Players
                 .Where(p=>p.IsActive)
@@ -79,6 +79,7 @@ namespace FootballApp.Services
         public async Task EditPlayerAsync(int id, FormPlayerViewModel model)
         {
             Player? edittedPlayer = await GetPlayerAsync(id);
+
             edittedPlayer.FirstName = model.FirstName;
             edittedPlayer.LastName = model.LastName;
             edittedPlayer.Age = model.Age;

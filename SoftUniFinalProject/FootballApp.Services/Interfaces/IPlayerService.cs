@@ -5,7 +5,7 @@ namespace FootballApp.Services.Interfaces
 {
     public interface IPlayerService
     {
-        public Task<PlayerPageViewModel?> GetPlayerByIdAsync(int playerId);
+        public Task<PlayerPageViewModel?> GetPlayerPageViewModelByIdAsync(int playerId);
         public Task<Player?> GetPlayerAsync(int playerId);
         public Task<bool> DoesPlayerExistsByIdAsync(int playerId);
 

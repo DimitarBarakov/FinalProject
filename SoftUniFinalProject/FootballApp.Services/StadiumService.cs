@@ -60,10 +60,10 @@ namespace FootballApp.Services
 
         public async Task<Stadium> GetStadiumByIdAsync(int stadiumId)
         {
-            Stadium stadium = await dbContext.Stadiums.Where(s=>s.IsActive)
+            Stadium? stadium = await dbContext.Stadiums.Where(s=>s.IsActive)
                 .Include(s=>s.Clubs)
                 .FirstOrDefaultAsync(s=>s.Id == stadiumId);
-            return stadium;
+            return stadium!;
         }
 
         public async Task<StadiumPageViewModel?> GetStadiumPageViewModelByIdAsync(int stadiumId)

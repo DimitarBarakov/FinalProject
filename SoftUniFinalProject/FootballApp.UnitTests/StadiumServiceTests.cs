@@ -18,9 +18,9 @@ namespace FootballApp.UnitTests
         {
             this._stadiums = new List<Stadium>()
             {
-                new Stadium(){Id = 1, Address = "asd",City = "asd",Location = "asd",Capacity = 10000, Country = "asd", Name = "asd"},
-                new Stadium(){Id = 2, Address = "asdz",City = "asdz",Location = "asdz",Capacity = 10001, Country = "asdz", Name = "asdz"},
-                new Stadium(){Id = 3, Address = "asdzx",City = "asdzx",Location = "asdzx",Capacity = 10011, Country = "asdzx", Name = "asdzx"},
+                new Stadium(){Id = 1, Address = "asd",City = "asd",Location = "asd",Capacity = 10000, Country = "asd", Name = "asd", IsActive = true},
+                new Stadium(){Id = 2, Address = "asdz",City = "asdz",Location = "asdz",Capacity = 10001, Country = "asdz", Name = "asdz", IsActive = true},
+                new Stadium(){Id = 3, Address = "asdzx",City = "asdzx",Location = "asdzx",Capacity = 10011, Country = "asdzx", Name = "asdzx", IsActive = true},
             };
 
             var options = new DbContextOptionsBuilder<FootballAppDbContext>()
@@ -103,5 +103,80 @@ namespace FootballApp.UnitTests
 
         //    //Assert.That(()=>stadiumService.EditStadiumAsync(stadiumId, model), Throws.NullReferenceException);
         //}
+
+        [Test]
+        public async Task AddStadium_Works()
+        {
+            IStadiumService stadiumService = new StadiumService(this._context);
+
+            var stadiumsCountBefore = _context.Stadiums.Count();
+
+            StadiumFormViewModel stadiumToAdd = new StadiumFormViewModel()
+            {
+                Address = "newasdz",
+                City = "newasdz",
+                Location = "newasdz",
+                Capacity = 10111,
+                Country = "newasdz",
+                Name = "newasdz"
+            };
+
+            var newStadiumId = await stadiumService.AddStadiumAndReturnIdAsync(stadiumToAdd);
+
+            var stadiumsCountAfter = _context.Stadiums.Count();
+            var newStadiumInDb = _context.Stadiums.Find(newStadiumId);
+
+            Assert.That(stadiumsCountAfter, Is.EqualTo(stadiumsCountBefore + 1));
+            Assert.That(newStadiumInDb.Name, Is.EqualTo(stadiumToAdd.Name));
+        }
+
+        [Test]
+        public async Task DeleteStadium_Works()
+        {
+            IStadiumService stadiumService = new StadiumService(this._context);
+
+            int stadiumId = 3;
+
+            await stadiumService.DeleteStadiumAsync(stadiumId);
+
+            var deletedStadium = _context.Stadiums.Find(stadiumId);
+
+            Assert.False(deletedStadium.IsActive);
+        }
+
+        [Test]
+        public async Task GetStadiumsForAddClubViewModelAsync_Works()
+        {
+            IStadiumService stadiumService = new StadiumService(this._context);
+
+            var stadiums = await stadiumService.GetStadiumsForAddClubViewModelAsync();
+
+            Assert.That(stadiums.Count(), Is.EqualTo(_stadiums.Count()));
+        }
+
+        [Test]
+        public async Task GetStadiumPageViewModelByIdAsync_Works()
+        {
+            IStadiumService stadiumService = new StadiumService(this._context);
+
+            int stadiumId = 2;
+
+            var model = await stadiumService.GetStadiumPageViewModelByIdAsync(stadiumId);
+            Stadium stadium = await stadiumService.GetStadiumByIdAsync(stadiumId);
+
+            Assert.That(model.Name, Is.EqualTo(stadium.Name));
+        }
+
+        [Test]
+        public async Task GetStadiumPageViewModelByIdAsync_Returns_Null()
+        {
+            IStadiumService stadiumService = new StadiumService(this._context);
+
+            int stadiumId = 23;
+
+            var model = await stadiumService.GetStadiumPageViewModelByIdAsync(stadiumId);
+
+            Assert.IsNull(model);
+        }
     }
 }

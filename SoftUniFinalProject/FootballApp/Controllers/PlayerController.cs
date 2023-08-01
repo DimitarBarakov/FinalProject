@@ -28,7 +28,7 @@ namespace FootballApp.Controllers
                 return BadRequest();
             }
 
-            PlayerPageViewModel? model = await playerService.GetPlayerByIdAsync(id);
+            PlayerPageViewModel? model = await playerService.GetPlayerPageViewModelByIdAsync(id);
 
             return View(model);
         }
