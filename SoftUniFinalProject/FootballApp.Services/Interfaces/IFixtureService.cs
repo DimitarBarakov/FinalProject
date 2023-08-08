@@ -15,6 +15,6 @@ namespace FootballApp.Services.Interfaces
 
         public Task DeleteFixtureAsync(int fixtureId);
 
-        public Task EditFixtureAsync(int fixtureId);
+        public Task EditFixtureAsync(int fixtureId, EditFixtureViewModel model);
     }
 }

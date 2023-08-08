@@ -107,9 +107,13 @@ namespace FootballApp.Services
             await dbContext.SaveChangesAsync();
         }
 
-        public Task EditFixtureAsync(int fixtureId)
+        public async Task EditFixtureAsync(int fixtureId, EditFixtureViewModel model)
         {
-            throw new NotImplementedException();
+            var fixtureToEdit = await GetFixtureAsync(fixtureId);
+
+            fixtureToEdit.StartTime = model.StartTime;
+
+            await dbContext.SaveChangesAsync();
         }
     }
 }

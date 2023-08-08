@@ -64,3 +64,6 @@ body {
 .nav-item:hover{
     cursor:pointer;
 }
+a:hover{
+    text-decoration:underline;
+}

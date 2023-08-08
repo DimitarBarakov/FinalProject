@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using static FootballApp.Common.GeneralConstants;
 using System.Data;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FootballApp.Controllers
 {
@@ -30,6 +31,10 @@ namespace FootballApp.Controllers
         public async Task<IActionResult> FixtureById(int id)
         {
             AllFixturesViewModel model = await fixtureService.GetFixtureViewModelByIdAsync(id);
+            if (model == null)
+            {
+                return NotFound();
+            }
             return View(model);
         }
 
@@ -75,11 +80,37 @@ namespace FootballApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> DeleteFixture(int id)
         {
             await fixtureService.DeleteFixtureAsync(id);
 
             return RedirectToAction("All");
+        }
+
+        [HttpGet]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> EditFixture(int id)
+        {
+            var fixture = await fixtureService.GetFixtureAsync(id);
+            var model = new EditFixtureViewModel();
+            model.StartTime = fixture.StartTime;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = AdminRoleName)]
+        public async Task<IActionResult> EditFixture(int id, EditFixtureViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            await fixtureService.EditFixtureAsync(id, model);
+            return RedirectToAction("FixtureById", "Fixture", new { id });
+
         }
     }
 }

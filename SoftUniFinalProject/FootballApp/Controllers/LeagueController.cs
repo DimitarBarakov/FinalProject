@@ -29,7 +29,7 @@ namespace FootballApp.Controllers
 
             if (!doesLeagueExists)
             {
-                return BadRequest();
+                return NotFound();
             }
 
             var model = await leagueService.GetLeaguePageViewModelByIdAsync(id);

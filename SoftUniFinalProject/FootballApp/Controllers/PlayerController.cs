@@ -21,11 +21,9 @@ namespace FootballApp.Controllers
         {
             bool doesPlayerExists = await playerService.DoesPlayerExistsByIdAsync(id);
 
-
-            //TODO: Add custom error page
             if (!doesPlayerExists)
             {
-                return BadRequest();
+                return NotFound();
             }
 
             PlayerPageViewModel? model = await playerService.GetPlayerPageViewModelByIdAsync(id);
@@ -82,7 +80,6 @@ namespace FootballApp.Controllers
         [Authorize(Roles = AdminRoleName)]
         public async Task<IActionResult> EditPlayer(int id, FormPlayerViewModel model)
         {
-            //model.ClubId = id;
             if (!ModelState.IsValid)
             {
                 return View(model);
