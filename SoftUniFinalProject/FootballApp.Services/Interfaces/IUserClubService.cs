@@ -7,7 +7,7 @@ namespace FootballApp.Services.Interfaces
     public interface IUserClubService
     {
         Task<bool> DoesUserClubExistsAsync(int clubId, string userId);
-        Task<List<FavoriteCLubsViewModel>> GetFavoriteClubsAsync(int clubId, string userId);
+        Task<List<FavoriteCLubsViewModel>> GetFavoriteClubsAsync(string userId);
 
         Task RemoveFromFavorites(int clubId, string userId);
         public Task AddToFavoritesAsync(int clubId, string userId);

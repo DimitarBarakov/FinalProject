@@ -32,7 +32,7 @@ namespace FootballApp.Controllers
                 return BadRequest();
             }
 
-            var model = await leagueService.GetLeagueByIdAsync(id);
+            var model = await leagueService.GetLeaguePageViewModelByIdAsync(id);
             return View(model);
         }
 

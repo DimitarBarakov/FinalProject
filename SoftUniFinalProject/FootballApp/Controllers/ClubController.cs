@@ -56,7 +56,7 @@ namespace FootballApp.Controllers
             {
                 return NotFound();
             }
-            var model = await clubService.GetClubByIdAsync(id);
+            var model = await clubService.GetClubPageViewModelByIdAsync(id);
 
             return View(model);
         }
@@ -66,7 +66,7 @@ namespace FootballApp.Controllers
         {
             //TODO: Validate the club and user id, validate if the team is already added
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var club = await clubService.GetClubByIdAsync(id);
+            var club = await clubService.GetClubPageViewModelByIdAsync(id);
             if (club == null)
             {
                 return NotFound("Club with this Id does not exists!");
@@ -81,10 +81,10 @@ namespace FootballApp.Controllers
             return RedirectToAction("FavoriteClubs");
         }
         [Authorize]
-        public async Task<IActionResult> FavoriteClubs(int id)
+        public async Task<IActionResult> FavoriteClubs()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            List<FavoriteCLubsViewModel> model = await userClubService.GetFavoriteClubsAsync(id, userId);
+            List<FavoriteCLubsViewModel> model = await userClubService.GetFavoriteClubsAsync(userId);
 
             return View(model);
         }

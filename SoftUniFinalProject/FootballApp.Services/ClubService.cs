@@ -15,7 +15,7 @@ namespace FootballApp.Services
         {
             dbContext = context;
         }
-        public async Task<ClubPageViewModel?> GetClubByIdAsync(int clubId)
+        public async Task<ClubPageViewModel?> GetClubPageViewModelByIdAsync(int clubId)
         {
             Club? club = await dbContext.Clubs
                 .Where(c=>c.IsActive)

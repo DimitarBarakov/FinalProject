@@ -22,7 +22,7 @@ namespace FootballApp.Services
             return res;
         }
 
-        public async Task<List<FavoriteCLubsViewModel>> GetFavoriteClubsAsync(int clubId, string userId)
+        public async Task<List<FavoriteCLubsViewModel>> GetFavoriteClubsAsync(string userId)
         {
             List<FavoriteCLubsViewModel> favoriteClubs = await dbContext.FavoriteClubs
                 .Where(fc=>fc.UserId == userId)

@@ -87,7 +87,7 @@ namespace FootballApp.Services
                 .FirstOrDefaultAsync(l => l.Id == leagueId);
         }
 
-        public async Task<LeaguePageViewModel> GetLeagueByIdAsync(int leagueId)
+        public async Task<LeaguePageViewModel> GetLeaguePageViewModelByIdAsync(int leagueId)
         {
             var league = await dbContext.Leagues
                 .Where(l=>l.IsActive)
