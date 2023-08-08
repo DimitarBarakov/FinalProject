@@ -43,6 +43,23 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Club" asp-action="FavoriteClubs">Favorite clubs</a>
                                 </li>
                             }
+                            @if (this.User.IsAdmin())
+                            {
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">Add</button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="League" asp-action="AddLeague">Add League</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="Fixture" asp-action="AddFixture">Add Fixture</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-controller="Stadium" asp-action="AddStadium">Add Stadium</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
                         }
                     </ul>
                     <partial name="_LoginPartial" />
