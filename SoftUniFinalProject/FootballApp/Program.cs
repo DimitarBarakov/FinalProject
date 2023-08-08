@@ -38,8 +38,8 @@ namespace FootballApp
             });
 
             builder.Services.AddControllersWithViews();
+            builder.WebHost.UseStaticWebAssets();
 
-            
 
             var app = builder.Build();
 
