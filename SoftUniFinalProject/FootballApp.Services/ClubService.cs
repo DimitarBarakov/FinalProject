@@ -4,6 +4,7 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace FootballApp.Services
 {
@@ -108,9 +109,9 @@ namespace FootballApp.Services
         {
             Club clubToAdd = new Club()
             {
-                Name = model.Name,
-                Nickname = model.Nickname,
-                Logo = model.Logo,
+                Name = WebUtility.HtmlEncode(model.Name),
+                Nickname = WebUtility.HtmlEncode(model.Nickname),
+                Logo = WebUtility.HtmlEncode(model.Logo),
                 YearOfCreation = model.YearOfCreation,
                 Wins = model.Wins,
                 Loses = model.Loses,
@@ -130,9 +131,9 @@ namespace FootballApp.Services
         {
             Club clubToEdit = await GetClubAsync(id);
 
-            clubToEdit.Name = model.Name;
-            clubToEdit.Nickname = model.Nickname;
-            clubToEdit.Logo = model.Logo;
+            clubToEdit.Name = WebUtility.HtmlEncode(model.Name);
+            clubToEdit.Nickname = WebUtility.HtmlEncode(model.Nickname);
+            clubToEdit.Logo = WebUtility.HtmlEncode(model.Logo);
             clubToEdit.YearOfCreation = model.YearOfCreation;
             clubToEdit.Wins = model.Wins;
             clubToEdit.Loses = model.Loses;

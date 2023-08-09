@@ -4,6 +4,7 @@ using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Club;
 using FootballApp.ViewModels.Stadium;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace FootballApp.Services
 {
@@ -20,11 +21,11 @@ namespace FootballApp.Services
         {
             Stadium stadiumToAdd = new Stadium()
             {
-                Location = model.Location,
-                City = model.City,
-                Country = model.Country,
-                Address = model.Address,
-                Name = model.Name,
+                Location = WebUtility.HtmlEncode(model.Location),
+                City = WebUtility.HtmlEncode(model.City),
+                Country = WebUtility.HtmlEncode(model.Country),
+                Address = WebUtility.HtmlEncode(model.Address),
+                Name = WebUtility.HtmlEncode(model.Name),
                 Capacity = model.Capacity
             };
 
@@ -47,11 +48,11 @@ namespace FootballApp.Services
         {
             Stadium stadiumToEdit = await GetStadiumByIdAsync(stadiumId);
 
-            stadiumToEdit.Location = model.Location;
-            stadiumToEdit.City = model.City;
-            stadiumToEdit.Country = model.Country;
-            stadiumToEdit.Address = model.Address;
-            stadiumToEdit.Name = model.Name;
+            stadiumToEdit.Location = WebUtility.HtmlEncode(model.Location);
+            stadiumToEdit.City = WebUtility.HtmlEncode(model.City);
+            stadiumToEdit.Country = WebUtility.HtmlEncode(model.Country);
+            stadiumToEdit.Address = WebUtility.HtmlEncode(model.Address);
+            stadiumToEdit.Name = WebUtility.HtmlEncode(model.Name);
             stadiumToEdit.Capacity = model.Capacity;
 
             await dbContext.SaveChangesAsync();

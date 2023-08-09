@@ -3,6 +3,7 @@ using FootballApp.Data.Models;
 using FootballApp.Services.Interfaces;
 using FootballApp.ViewModels.Player;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace FootballApp.Services
 {
@@ -52,17 +53,17 @@ namespace FootballApp.Services
         {
             Player playerToAdd = new Player()
             {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
+                FirstName = WebUtility.HtmlEncode(model.FirstName),
+                LastName = WebUtility.HtmlEncode(model.LastName),
                 Age = model.Age,
                 Number = model.Number,
                 Goals = model.Goals,
                 Assists = model.Assists,
                 ClubId = id,
                 MatchesPlayed = model.MatchesPlayed,
-                Country = model.Country,
-                Position = model.Position,
-                Picture = model.Picture
+                Country = WebUtility.HtmlEncode(model.Country),
+                Position = WebUtility.HtmlEncode(model.Position),
+                Picture = WebUtility.HtmlEncode(model.Picture),
             };
 
             await dbContext.Players.AddAsync(playerToAdd);
@@ -80,16 +81,16 @@ namespace FootballApp.Services
         {
             Player? edittedPlayer = await GetPlayerAsync(id);
 
-            edittedPlayer.FirstName = model.FirstName;
-            edittedPlayer.LastName = model.LastName;
+            edittedPlayer.FirstName = WebUtility.HtmlEncode(model.FirstName);  
+            edittedPlayer.LastName = WebUtility.HtmlEncode(model.LastName);
             edittedPlayer.Age = model.Age;
             edittedPlayer.Number = model.Number;
             edittedPlayer.Goals = model.Goals;
             edittedPlayer.Assists = model.Assists;
             edittedPlayer.MatchesPlayed = model.MatchesPlayed;
-            edittedPlayer.Country = model.Country;
-            edittedPlayer.Position = model.Position;
-            edittedPlayer.Picture = model.Picture;
+            edittedPlayer.Country = WebUtility.HtmlEncode(model.Country);
+            edittedPlayer.Position = WebUtility.HtmlEncode(model.Position);
+            edittedPlayer.Picture = WebUtility.HtmlEncode(model.Picture);
 
             await dbContext.SaveChangesAsync();
         }

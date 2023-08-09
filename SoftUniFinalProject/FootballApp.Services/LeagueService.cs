@@ -5,6 +5,7 @@ using FootballApp.ViewModels.League;
 using FootballApp.ViewModels.Fixture;
 using Microsoft.EntityFrameworkCore;
 using FootballApp.ViewModels.Club;
+using System.Net;
 
 namespace FootballApp.Services
 {
@@ -23,10 +24,10 @@ namespace FootballApp.Services
         {
             League leagueToAdd = new League()
             {
-                Name = model.Name,
-                Country = model.Country,
-                Logo = model.Logo
-            };
+                Name = WebUtility.HtmlEncode(model.Name),
+                Country = WebUtility.HtmlEncode(model.Country),
+                Logo = WebUtility.HtmlEncode(model.Logo)
+        };
 
             await dbContext.Leagues.AddAsync(leagueToAdd);
             await dbContext.SaveChangesAsync();
@@ -43,9 +44,9 @@ namespace FootballApp.Services
         {
             League leagueToEdit = await GetLeagueAsync(leagueId);
 
-            leagueToEdit.Name = model.Name;
-            leagueToEdit.Logo = model.Logo;
-            leagueToEdit.Country = model.Country;
+            leagueToEdit.Name = WebUtility.HtmlEncode(model.Name);
+            leagueToEdit.Logo = WebUtility.HtmlEncode(model.Logo);
+            leagueToEdit.Country = WebUtility.HtmlEncode(model.Country);
 
             await dbContext.SaveChangesAsync();
         }

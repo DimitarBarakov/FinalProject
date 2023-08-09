@@ -2,6 +2,7 @@ using FootballApp.Data;
 using FootballApp.Services;
 using FootballApp.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace FootballApp
@@ -37,7 +38,10 @@ namespace FootballApp
                 options.Password.RequireUppercase = false;
             });
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+            });
             builder.WebHost.UseStaticWebAssets();
 
 
