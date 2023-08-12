@@ -3,7 +3,11 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
-    var name = User.Identity?.Name!.Split("@")[0];
+    string name = "";
+    if (SignInManager.IsSignedIn(User))
+    {
+        name = User.Identity?.Name!.Split("@")[0];
+    }
 }
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))

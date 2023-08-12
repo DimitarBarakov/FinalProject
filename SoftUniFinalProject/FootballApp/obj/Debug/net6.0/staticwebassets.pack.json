@@ -49,6 +49,18 @@
       "PackagePath": "staticwebassets\\imgs\\Leagues\\Premier League.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Akanji.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Akanji.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Ake.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Ake.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Alvarez.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Alvarez.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Antony.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Antony.png"
     },
@@ -61,24 +73,116 @@
       "PackagePath": "staticwebassets\\imgs\\Players\\Casemiro.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Chalobah.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Chalobah.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Cucurella.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Cucurella.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Dalot.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Dalot.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\De Bruyne.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\De Bruyne.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Ederson.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Ederson.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Enzo.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Enzo.png"
     },
     {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Eriksen.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Eriksen.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Foden.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Foden.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Gabriel.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Gabriel.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Gallagher.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Gallagher.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Gvardiol.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Gvardiol.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Haaland.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Haaland.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Jackson.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Jackson.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\James.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\James.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Jesus.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Jesus.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Kepa.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Kepa.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Kovacic.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Kovacic.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Lisandro.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Lisandro.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Martinelli.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Martinelli.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Mudryk.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Mudryk.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Odeggard.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Odeggard.png"
     },
     {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Onana.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Onana.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Partey.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Partey.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Ramsdale.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Ramsdale.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Rashford.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Rashford.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Rodri.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Rodri.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Saka.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Saka.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Saliba.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Saliba.png"
     },
     {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Sancho.png",
@@ -89,8 +193,36 @@
       "PackagePath": "staticwebassets\\imgs\\Players\\Shaw.png"
     },
     {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Sterling.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Sterling.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Thiago Silva.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Thiago Silva.png"
+    },
+    {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Varane.png",
       "PackagePath": "staticwebassets\\imgs\\Players\\Varane.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Vieira.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Vieira.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Walker.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Walker.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\White.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\White.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Zinchenko.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Zinchenko.png"
+    },
+    {
+      "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Players\\Ziyech.png",
+      "PackagePath": "staticwebassets\\imgs\\Players\\Ziyech.png"
     },
     {
       "Id": "E:\\WORKSPACE\\SoftUni\\FinalProject\\FinalProject\\SoftUniFinalProject\\FootballApp\\wwwroot\\imgs\\Stadiums\\Anfiled.png",
